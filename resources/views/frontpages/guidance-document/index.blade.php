@@ -10,12 +10,12 @@
   </div>
 
  <!-- Guidance Document-->
-    <section class="relative pb-20 flex content-center justify-center bg-white min-h-screen">
+    <section class="pb-10">
       <div class="container mx-auto px-4">
         <div class="flex flex-wrap">
           <div class="w-full md:w-3/12">
             @foreach ($guidancecategories as $item)
-              <div class="mb-2 shrink">
+              <div class="mb-2 shrink md:pr-4">
                 <div class="flex max-w-sm w-full bg-gray-50 shadow rounded overflow-hidden mx-auto">
                   <div class="w-4 bg-green-600"></div>
                   <div class="w-full p-2">
@@ -28,7 +28,7 @@
               @endforeach
           </div>
 
-          <div class="w-full md:w-9/12 px-4 mr-auto ml-auto mt-4" data-aos="fade-up">
+          <div class="w-full md:w-9/12 p-4 mr-auto ml-auto shadow">
             <p class="text-justify">
               Earth's climate has changed throughout history. Just in the last 650,000 years there have been seven cycles of
               glacial

@@ -12,8 +12,8 @@
 <script type="text/javascript">
     
   $(document).ready(function() {
-        var slideIndex = 0;
-        showSlides();
+        // var slideIndex = 0;
+        // showSlides();
         load_Disaster_data();
         load_MinMaxTemp_data();
         load_GHG_data();

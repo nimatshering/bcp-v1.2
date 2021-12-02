@@ -1,4 +1,4 @@
- <nav class="bg-gray-100 py-3 w-full mt-2 rounded shadow">
+ <nav class="bg-gray-100 py-3 w-full mt-2 rounded shadow px-2 md:px-0">
     <ol class="list-reset flex text-sm pl-2">
       <li><a href="{{ route('climatescience.category')}}" class="text-blue font-bold">Climate Science and Research</a></li>
       <li><span class="mx-2">/</span></li>

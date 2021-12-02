@@ -3,7 +3,7 @@
   <x-front.top-header />
 
  <!-- Content -->
-<section class="pb-20 flex content-center justify-center h-screen">
+<section class="py-6">
   <div class="container mx-auto p-2">
     <div class="w-full md:w-full my-4 mx-auto">
         <nav class="bg-gray-100 shadow rounded py-3 w-full mt-2">
@@ -32,7 +32,7 @@
                 <option value="funding">Funding Agency</option>
               </select>
             </div>
-            <div class="w-full md: w-8/12">
+            <div class="w-full md:w-7/12">
               <div class="flex gap-2">
                 <input type="text" name = "searchkey" placeholder="Search key" class="w-8/12 form-control"/>
                 <button type ="submit" class="m-1 px-4 text-left w-1/4 rounded-md bg-green-500 text-white text-sm font-bold">
@@ -46,7 +46,7 @@
 
         <div class="flex flex-wrap flex-row gap-4 mx-auto mt-10">
           <!-- Publication Documents -->
-          <div class="w-full overflow-hidden">
+          <div class="w-full">
               <h3 class="leading-6 font-bold md:text-lg pb-4 text-center uppercase">{{ $programprojectcategory->name}}</h3>
                 <div class="px-4 py-2">
                   @if (!$publications->isEmpty())

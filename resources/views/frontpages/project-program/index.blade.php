@@ -9,11 +9,11 @@
   </div>
 
  <!-- Guidance Document-->
-    <section class="relative pb-20 content-center bg-white min-h-screen">
+    <section class="py-6">
       <div class="container mx-auto">
         <div class="flex flex-wrap justify-between">
           <div class="w-full md:w-3/12">
-            <div class="container mt-4 w-full mx-auto">
+            <div class="pr-4 md:pr-0">
               <div class="flex flex-col gap-2 mx-4 md:mx-0">
                 @foreach ($programprojectcategories as $item)
                  <div class="mb-2 shrink">
@@ -31,7 +31,7 @@
           </div>
           </div>
 
-          <div class="w-full md:w-8/12 px-2 mr-auto ml-auto mt-4">
+          <div class="w-full md:w-9/12 m-4 md:m-0 p-4 shadow">
             <p class="text-justify">
               Earth's climate has changed throughout history. Just in the last 650,000 years there have been seven cycles of
               glacial

@@ -14,11 +14,13 @@
       <div class="container mx-auto">
       <div class="flex flex-wrap">
         <div class="w-full md:w-3/12">
+          <div class="md:pr-4">
             @include('frontpages.analysed-data.partials._sidebar')
+          </div>
         </div>
         <div class="w-full md:w-9/12">
           <div class="flex flex-wrap">
-            <div class="w-full px-4 mr-auto ml-auto" data-aos="fade-up">
+            <div class="w-full p-4 mx-4 md:mx-0 shadow">
               <p class="text-justify py-2">
                 Bhutan can also be characterized into six agro-climatic regions: alpine, cool temperate, warm temperate, dry 
                 sub-tropical, humid sub-tropical, and wet-sub tropical. Climate varies dramatically because of the countries 

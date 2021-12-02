@@ -3,7 +3,7 @@
    <x-front.top-header />
 
  <!-- Guidance Document-->
-    <section class="pb-20 bg-white min-h-screen">
+    <section class="pb-10">
      <div class="container mx-auto">
            @include('frontpages.climate-science-research._partials._breadcrumbs')
 

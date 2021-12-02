@@ -90,22 +90,19 @@
 
  
     <!-- Media Gallery -->
-    <section class="container mx-auto py-10 bg-white">
-      <h2 class="flex md:text-2xl font-extrabold leading-8 tracking-tight justify-center py-10 uppercase">Media Gallery</h2>
-        <div class="flex flex-wrap space-x-4 justify-evenly">
-          <div class="flex md:w-8/12 space-x-4">
-            @foreach ($medias as $item)
-              <div class="w-full">
-                <div class="video-container" data-aos="zoom-in">
-                  <iframe class="video" src="{{ $item->videolink }}" allowfullscreen></iframe>
-                </div>
-              </div>
-               @endforeach
+    <section class="container mx-auto md:py-10">
+      <h2 class="flex md:text-2xl font-extrabold leading-8 tracking-tight justify-center py-2 md:py-10 uppercase">Videos</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3">
+          @foreach ($medias as $item)
+          <div class="justify-center mx-4 md:mx-0 md:pr-4 pb-2">
+            <div class="video-container">
+              <iframe class="video" src="{{ $item->videolink }}" allowfullscreen></iframe>
             </div>
-
-          <div class="w-full md:w-3/12">
+          </div>
+            @endforeach
+          {{-- <div class="m-4 md:m-0">
             <!-- Slideshow container -->
-            <div class="slideshow-container" data-aos="zoom-in">
+            <div class="slideshow-container">
               <div class="gallerySlides fade">
                 <div class="numbertext">1 / 3</div>
                 <img src="assets/img/photo-gallery/1.jpg" style="width:100%">
@@ -121,15 +118,14 @@
                 <img src="assets/img/photo-gallery/3.jpg" style="width:100%">
               </div>
             </div>
-          </div>
+          </div> --}}
         </div>
-        <div class="flex flex-wrap justify-evenly mt-6">
-          <div class="flex w-9/12 justify-center">
-            <a href="{{ route('mediagallery')}}" class="py-3 px-6 text-white uppercase text-xs rounded-lg bg-green-600 hover:bg-green-500 shadow-lg block md:inline-block">
+        <div class="my-6">
+          <div class="flex justify-center">
+            <a href="{{ route('mediagallery')}}" class="py-3 px-6 text-white uppercase text-xs rounded-lg bg-green-600 hover:bg-green-500 shadow-lg block md:inline-block text-center">
               See More Videos <i class="fa fa-long-arrow-alt-right pl-4"></i>
             </a>
           </div>
-          <div class="w-3/12 justify-center"></div>
         </div>
       </div>
     </section>

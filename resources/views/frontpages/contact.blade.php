@@ -21,7 +21,7 @@
         @endif
 
     <!-- Content -->
-    <section class="container mx-auto flex md:flex-row w-full gap-4 min-h-screen">
+    <section class="container mx-auto gap-4 min-h-screen">
       <div class="w-full md:w-4/12 px-6 py-4 mx-auto bg-gray-50 rounded-md shadow my-4">
           <h2 class="text-3xl font-semibold text-center text-gray-800 py-4">Contact Us</h2>
           <div class="grid grid-cols-1 gap-4">

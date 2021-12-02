@@ -1,4 +1,4 @@
- <footer class="bg-deepblue-900 pt-20">
+ <footer class="bg-deepblue-900 md:pt-20">
     <div class="max-w-6xl m-auto text-gray-800 flex flex-wrap justify-left">
       <!-- Col-1 -->
       <div class="p-5 w-1/2 sm:w-4/12 md:w-3/12">
