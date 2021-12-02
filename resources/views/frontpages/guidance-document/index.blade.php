@@ -16,7 +16,7 @@
           <div class="w-full md:w-3/12">
             @foreach ($guidancecategories as $item)
               <div class="mb-2 shrink">
-                <div class="flex max-w-sm w-full bg-gray-50 shadow-lg rounded overflow-hidden mx-auto">
+                <div class="flex max-w-sm w-full bg-gray-50 shadow rounded overflow-hidden mx-auto">
                   <div class="w-4 bg-green-600"></div>
                   <div class="w-full p-2">
                       <a href="{{ route('guidance.subcategory',$item->slug)}}">
