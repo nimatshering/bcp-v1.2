@@ -1,6 +1,6 @@
 <x-app-layout>
  @push('styles')
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.0/css/pikaday.min.css" integrity="sha512-yFCbJ3qagxwPUSHYXjtyRbuo5Fhehd+MCLMALPAUar02PsqX3LVI5RlwXygrBTyIqizspUEMtp0XWEUwb/huUQ==" crossorigin="anonymous" /> 
+   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
  @endpush
 <nav class="bg-gray-100 p-2 rounded font-sans w-full mb-2">
     <ol class="list-reset flex text-grey-dark uppercase text-sm">
@@ -29,23 +29,34 @@
         @include('backend.agency.programprojects.partials._editform')
        
         <div class=" mt-6 flex gap-2 justify-between">
-           <div class="my-2">
-              <a href="{{ route('agency.programprojects.show',$programproject->category_id)}}" class="bg-gray-600 hover:bg-gray-500 uppercase font-bold px-6 py-2 rounded text-white">
-                  <i class="fa fa-arrow-left mr-4"></i>{{ __('Back') }}
-              </a>
-            </div>
-          <div class="">
               <button type ='submit' class="uppercase font-bold text-xs rounded px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white">
                   {{ __('Update') }}
               </button>
-            </div>
+              <a href="{{ route('agency.programprojects.show',$programproject->category_id)}}" class="bg-gray-600 hover:bg-gray-500 uppercase font-bold px-6 py-2 rounded text-white">
+                  <i class="fa fa-arrow-left mr-4"></i>{{ __('Back') }}
+              </a>
         </div>
       </form>
     </div>
   </div>
 
 @push('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.0/pikaday.min.js" integrity="sha512-AWC8WaJpos1L8xD++XDtqY3znmqhqDY/o4KZ3wo7kmt1Hx6YjP4ZqPnYDrLg1ymG6iidGzq/UKHS/MxBwVAlwQ==" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
+
+    <script type="text/javascript">
+       $(function() {
+               $(".datepicker").datepicker({ dateFormat: "yy-mm-dd" }).val()
+       });
+   </script>
+
+    <script>
+        ClassicEditor
+        .create( document.querySelector( '#description' ) )
+        .catch( error => {
+        console.error( error );
+        } );
+    </script>
 @endpush
 </x-app-layout>

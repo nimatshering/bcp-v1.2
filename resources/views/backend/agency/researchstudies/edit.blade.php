@@ -26,16 +26,12 @@
         @include('backend.agency.researchstudies.partials._editform')
        
         <div class=" mt-6 flex gap-2 justify-between">
-           <div class="my-2">
-              <a href="{{ route('agency.researchstudy.index')}}" class="bg-gray-600 hover:bg-gray-500 uppercase font-bold px-6 py-2 rounded text-white">
-                  <i class="fa fa-arrow-left mr-4"></i>{{ __('Back') }}
-              </a>
-            </div>
-          <div class="flex gap-2">
               <button type ='submit' class="uppercase font-bold text-xs rounded px-6 py-2 bg-blue-600 hover:bg-blue-500 text-white">
                   {{ __('Save') }}
               </button>
-            </div>
+              <a href="{{ route('agency.researchstudy.index')}}" class="bg-gray-600 hover:bg-gray-500 uppercase font-bold px-6 py-2 rounded text-white">
+                  <i class="fa fa-arrow-left mr-4"></i>{{ __('Back') }}
+              </a>
         </div>
       </form>
       
@@ -44,13 +40,12 @@
 
 @push('scripts')
     <script src="https://cdn.ckeditor.com/ckeditor5/25.0.0/classic/ckeditor.js"></script>
-   <script>
+    <script>
         ClassicEditor
         .create( document.querySelector( '#description' ) )
         .catch( error => {
         console.error( error );
         } );
-   </script>
-    @endpush
-
+    </script>
+  @endpush
 </x-app-layout>

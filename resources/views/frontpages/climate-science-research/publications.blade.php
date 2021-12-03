@@ -16,13 +16,12 @@
             <div class="flex flex-wrap flex-row gap-4 mx-auto mt-10">
               <!-- Climate Science Research Documents -->
               <div class="w-full overflow-hidden">
-                  <h3 class="leading-6 font-bold md:text-xl p-4">{{ $subcategory->name }}</h3>
                     <div class="px-4 py-2 border-t border-b">
                       @if (!$publications->isEmpty())
                         @foreach ($publications as $item)
                             <div class="text-sm font-medium text-gray-800">
-                                <div class="font-semibold text-xl">{!! $item->title !!}</div>
-                                <div class="text-md font-semibold">Author: {!! $item->author !!}</div>
+                                <div class="font-bold">{!! $item->title !!}</div>
+                                <div class="text-md">Author: {!! $item->author !!}</div>
                             </div>
                             @if ($item->document)
                               <div class="mt-1">
@@ -37,15 +36,17 @@
                         @endforeach
                       @else
                         <div class="text-center col-span-3">
-                          <p class="font-bold">Sorry! No results found.</p>
+                          <p class="font-bold">Sorry! No results found</p>
                           <p> Try another way</p>
                         </div>
                       @endif
                   </div>
                 </div>
-              <div class="w-full">
-                {{-- {{ $publications->links() }} --}}
-              </div>
+              @if(!$publications->isEmpty())   
+                <div class="w-full">
+                  {{ $publications->links() }}
+                </div>
+              @endif
             </div>
         </div>
     </div>

@@ -3,27 +3,27 @@
   <x-front.top-header />
 
  <!-- Content -->
-<section class="pb-20 bg-white min-h-screen">
-  <div class="container mx-auto px-4">
+<section class="pb-20">
+  <div class="container mx-auto">
       @include('frontpages.guidance-document._partials._breadcrumbs')
 
-   <div class="flex flex-wrap">
-      <div class="w-full md:w-3/12 my-2">
+   <div class="flex flex-wrap mt-10">
+      <div class="w-full md:w-3/12">
         @include('frontpages.guidance-document._partials._sidebar')
     </div>
-    <div class="w-full md:w-9/12 mt-6">
+    <div class="w-full md:w-9/12">
           @include('frontpages.guidance-document._partials._searchform')
 
-        <div class="flex flex-wrap mx-auto mt-10">
+        <div class="flex flex-wrap mx-auto p-4">
           <!-- Publication Documents -->
-          <div class="w-full overflow-hidden">
-              <h3 class="leading-6 font-bold text-xl pb-4">{{ $subcategory->name}}</h3>
-                <div class="px-4 py-2 border-t border-b">
+          <div class="w-full mt-6">
+              <h3 class="leading-6 font-extrabold text-lg p-2">{{ $subcategory->name}}</h3>
+                <div class="p-2 border-t border-b">
                   @if (!$publications->isEmpty())
                     @foreach ($publications as $item)
-                        <div class="text-sm font-medium text-gray-800">
-                            <div class="font-semibold text-xl">{!! $item->title !!}</div>
-                            <div class="text-md font-semibold">Author: {!! $item->author !!}</div>
+                        <div class="font-medium text-gray-800">
+                            <div class="font-bold">{!! $item->title !!}</div>
+                            <div class="text-sm">Author: {!! $item->author !!}</div>
                         </div>
                         @if ($item->document)
                           <div class="mt-1">
@@ -45,7 +45,7 @@
               </div>
             </div>
           <div class="w-full">
-            {{-- {{ $documents->links() }} --}}
+            {{ $publications->links() }}
           </div>
         </div>
     </div>

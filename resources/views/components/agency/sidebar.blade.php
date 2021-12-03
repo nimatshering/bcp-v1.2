@@ -254,13 +254,6 @@
           </h1>
         </a>
 
-         <!-- Media Library -->
-        <a href="{{ route('agency.medias') }}">
-          <h1 class="mx-4 p-4 font-extrabold rounded uppercase text-xs bg-green-600 hover:bg-green-500 text-white py-3 mb-2">
-             Media Gallery
-          </h1>
-        </a>
-
          <!-- FAQs -->
         <a href="{{ route('agency.faqs') }}">
           <h1 class="mx-4 p-4 font-extrabold rounded uppercase text-xs bg-green-600 hover:bg-green-500 text-white py-3 mb-2">
@@ -268,12 +261,7 @@
           </h1>
         </a>
 
-             <!-- Links -->
-        <a href="{{ route('agency.link.category') }}">
-          <h1 class="mx-4 p-4 font-extrabold rounded uppercase text-xs bg-green-600 hover:bg-green-500 text-white py-3 mb-10">
-            Resource Links
-          </h1>
-        </a>
+        
 
           {{-- <!-- Discussion Forum -->
         <a href="{{ route('agency.forum.index') }}">

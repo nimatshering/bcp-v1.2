@@ -5,20 +5,6 @@
       <x-jet-input-error for="name" class="mt-2" />
   </div>
 
-  <!-- videolink-->
-     <div class="col-span-6 sm:col-span-4 mt-4">
-      <x-jet-label for="videolink" value="{{ __('Video Link') }}" class="mb-2"/>
-      <x-jet-input name="videolink" type="text" class="mt-1 block w-full" />
-      <x-jet-input-error for="videolink" class="mt-2" />
-  </div>
-
-    <!-- Other link-->
-    <div class="col-span-6 sm:col-span-4 mt-4">
-      <x-jet-label for="otherlink" value="{{ __('Other Link') }}" class="mb-2"/>
-      <x-jet-input name="otherlink" type="text" class="mt-1 block w-full"/>
-      <x-jet-input-error for="otherlink" class="mt-2" />
-    </div>
-
     <!-- Document -->
       <div class="mt-4">
         <div class="col-span-6 sm:col-span-4">

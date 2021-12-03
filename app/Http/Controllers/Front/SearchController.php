@@ -33,12 +33,12 @@ class SearchController extends Controller
         $category = Csrcategory::where('id',$cat)->first();
         $subcategory = Csrsubcategory::where('id',$subcat)->first();
         $subcategories = Csrsubcategory::where('cat_id',$cat)->get();
-       
         if($searchby == 'title'){
            $publications = Csrdocument::where('subcategory_id',$subcat)->where("title","LIKE","%$searchkey%")->latest()->paginate(10);
-        }else{
-            $publications = Csrdocument::where('subcategory_id',$subcat)->where("author","LIKE","%$searchkey%")->latest()>paginate(10);
+        } else{
+            $publications = Csrdocument::where('subcategory_id',$subcat)->where("author","LIKE","%$searchkey%")->latest()->paginate(10);
         }
+       
        
         return view('frontpages.climate-science-research.publications', compact('category','subcategory','subcategories','publications'));
     }

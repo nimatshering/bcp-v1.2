@@ -13,7 +13,7 @@
             <x-jet-input-error for="document"/>
         </div>
       </div> 
-        <button class="my-4 bg-green-700 hover:bg-green-600 text-white px-2 py-1 text-xs rounded" wire:click.prevent="store" wire:loading.attr="disabled">
+        <button class="my-4 bg-gray-700 hover:bg-gray-600 text-white px-2 py-1 text-xs rounded" wire:click.prevent="store" wire:loading.attr="disabled">
             <i class="fa fa-upload"></i> Upload
         </button>
     </div>

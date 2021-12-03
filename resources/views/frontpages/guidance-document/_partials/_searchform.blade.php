@@ -1,6 +1,6 @@
 <form action="{{ route('search.guidance.document') }}" method="POST">
     @csrf
-    <div class="md:p-6 p-4 flex flex-wrap justify-between gap-2 bg-gray-50 shadow border rounded-lg">
+    <div class="md:p-6 p-4 flex flex-wrap justify-between gap-2 bg-gray-50 shadow border rounded-lg mx-4 md:mx-0">
     <div class="w-full md:w-4/12">
       <select name ="searchby" class="w-full form-control text-gray-500">
         <option value=""> Search by  </option>

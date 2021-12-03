@@ -20,9 +20,9 @@
               <div class="md:flex shadow  mx-4 md:mx-auto bg-white rounded-lg">
                 <img class="h-52 w-full md:w-1/3  object-fit rounded-lg rounded-r-none pb-5/6" src="{{ asset('uploads/'.$item->photo)}}" alt="expert">
                 <div class="w-full md:w-2/3 px-4 py-4  rounded-lg">
-                      <h2 class="text-xl text-gray-800 font-medium mr-auto mb-2">{{ $item->name }}</h2>
-                      <h2 class=" text-gray-800 font-medium mr-auto">{{ $item->field }}</h2>
-                      <h2 class=" text-gray-800 font-medium mr-auto">{{ $item->qualification }}</h2>
+                      <h2 class="font-bold pb-4">{{ $item->name }}</h2>
+                      <h2 class=" text-gray-800 font-medium">{{ $item->field }}</h2>
+                      <h2 class=" text-gray-800 font-medium">{{ $item->qualification }}</h2>
                     <p class="text-sm text-gray-700 mt-4">
                       {!! $item->description !!}
                     </p>

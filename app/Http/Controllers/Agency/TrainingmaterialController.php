@@ -34,15 +34,11 @@ class TrainingmaterialController extends Controller
     {
         $request->validate([
         'name' => 'required',
-        'videolink' => 'required',
-        'otherlink' => 'required',
         'description' => 'nullable',
         ]);
 
           Trainingmaterial::create([
           'name' =>   $request->input('name'), 
-          'videolink' =>   $request->input('videolink'), 
-          'otherlink' =>   $request->input('otherlink'), 
           'description' =>   $request->input('description'), 
           ]);
         session()->flash('message', 'Training material successfully added!');
@@ -73,14 +69,10 @@ class TrainingmaterialController extends Controller
      
       $request->validate([
         'name' => 'required',
-        'videolink' => 'nullable',
-        'otherlink' => 'nullable',
         'description' => 'nullable',
       ]);
       $trainingmaterial = Trainingmaterial::findOrFail($id);
       $trainingmaterial->name = $request->input('name');
-      $trainingmaterial->videolink = $request->input('videolink');
-      $trainingmaterial->otherlink = $request->input('otherlink');
       $trainingmaterial->description = $request->input('description');
       $trainingmaterial->save();
       session()->flash('message', 'Training material updated successfully');

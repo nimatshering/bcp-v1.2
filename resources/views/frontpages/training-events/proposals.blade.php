@@ -18,10 +18,9 @@
 
         <div class="w-full md:w-9/12 m-4 md:m-0">
           @foreach ($posts as $item)
-            <div class="p-6 bg-white rounded-lg shadow mb-6" data-aos="fade-up">
-                <span class="text-gray-700 font-bold hover:underline text-xl">{{ $item->title }}</span>
-              <div class="mt-2 font-light text-gray-600 text-xs">
-                Published on: {{ $item->published_at }} 
+            <div class="p-6 bg-white rounded-lg shadow mb-6">
+                <span class="text-gray-800 font-bold hover:underline">{{ $item->title }}</span>
+              <div class="mt-2 font-light text-gray-700 text-xs uppercase">Published on: {{ $item->published_at }} 
               </div>
               <div class="trix-content py-2">
                 {!! $item->summary !!}

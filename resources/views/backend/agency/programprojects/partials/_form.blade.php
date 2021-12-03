@@ -29,14 +29,14 @@
       <!-- Start Date -->
     <div class="col-span-6 sm:col-span-4 mt-4">
       <x-jet-label for="start_at" value="{{ __('Start Date') }}" class="mb-2"/>
-      <x-jet-input name="start_at" type="date" class="mt-1 block w-full"/>
+      <x-jet-input name="start_at" type="text" class="datepicker mt-1 block w-full"/>
       <x-jet-input-error for="start_at" class="mt-2" />
     </div>
 
       <!-- End Date -->
     <div class="col-span-6 sm:col-span-4 mt-4">
       <x-jet-label for="end_at" value="{{ __('End Date') }}" class="mb-2"/>
-      <x-jet-input name="end_at" type="date" class="mt-1 block w-full"/>
+      <x-jet-input name="end_at" type="text" class="datepicker mt-1 block w-full"/>
       <x-jet-input-error for="end_at" class="mt-2" />
     </div>
 
@@ -46,8 +46,8 @@
       <x-jet-label for="status" value="{{ __('Select Project Status') }}" />
       <select name="status" class="form-control  mt-1 block w-full">
         <option value="">Select Document Type</option>
-          <option value="1"> Ongoing</option>
-          <option value="2"> Completed</option>
+          <option value="ongoing"> Ongoing</option>
+          <option value="completed"> Completed</option>
       </select>
           <x-jet-input-error for="programproject.status" class="mt-2" />
       </div>
@@ -67,11 +67,10 @@
       </div>
     </div>
 
-    <!-- Document -->
       <div class="mt-4">
         <div class="col-span-6 sm:col-span-4">
           <x-jet-label for="description" value="{{ __('Description') }}" class="font-bold"/>
-          <textarea class="form-control trix-content" id="description" name="description"></textarea>
+          <textarea class="form-control" id="description" name="description"></textarea>
         </div>
       </div> 
       <input type="hidden" name="category_id" value={{ $proj->category_id}} />

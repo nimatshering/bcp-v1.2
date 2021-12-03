@@ -29,14 +29,14 @@
       <!-- Start Date -->
     <div class="col-span-6 sm:col-span-4 mt-4">
       <x-jet-label for="start_at" value="{{ __('Start Date') }}" class="mb-2"/>
-      <x-jet-input name="start_at" type="date" class="mt-1 block w-full"  value="{{ $programproject->start_at }}" />
+      <x-jet-input name="start_at" type="text" class="datepicker mt-1 block w-full"  value="{{ $programproject->start_at }}" />
       <x-jet-input-error for="start_at" class="mt-2" />
     </div>
 
       <!-- End Date -->
     <div class="col-span-6 sm:col-span-4 mt-4">
       <x-jet-label for="end_at" value="{{ __('End Date') }}" class="mb-2"/>
-      <x-jet-input name="end_at" type="date" class="mt-1 block w-full"  value="{{ $programproject->end_at }}" />
+      <x-jet-input name="end_at" type="text" class="datepicker mt-1 block w-full"  value="{{ $programproject->end_at }}" />
       <x-jet-input-error for="end_at" class="mt-2" />
     </div>
 
@@ -71,7 +71,7 @@
           <div class="mt-4">
             <div class="col-span-6 sm:col-span-4">
               <x-jet-label for="description" value="{{ __('Description') }}" class="font-bold"/>
-              <textarea class="form-control trix-content" id="description" name="description">@isset($programproject) {{ $programproject->description }} @endisset</textarea>
+              <textarea class="form-control" id="description" name="description">@isset($programproject) {{ $programproject->description }} @endisset</textarea>
             </div>
           </div> 
 

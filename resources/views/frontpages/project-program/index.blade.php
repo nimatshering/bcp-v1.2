@@ -14,7 +14,7 @@
         <div class="flex flex-wrap justify-between">
           <div class="w-full md:w-3/12">
             <div class="pr-4 md:pr-0">
-              <div class="flex flex-col gap-2 mx-4 md:mx-0">
+              <div class="flex flex-col gap-2 mx-4 md:mx-0 md:pr-4">
                 @foreach ($programprojectcategories as $item)
                  <div class="mb-2 shrink">
                     <div class="flex max-w-sm w-full bg-gray-50 shadow rounded overflow-hidden mx-auto">

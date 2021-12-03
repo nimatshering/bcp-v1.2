@@ -195,6 +195,15 @@
                   <i class="fa fa-angle-right text-sm mr-2"></i>
                   About
                 </a>
+                <a class="dropdown-menu-item text-white" href="{{ route('admin.medias') }}">
+                  <i class="fa fa-angle-right text-sm mr-2"></i>
+                  Video Gallery
+                </a>
+
+                 <a class="dropdown-menu-item text-white" href="{{ route('admin.link.category') }}">
+                  <i class="fa fa-angle-right text-sm mr-2"></i>
+                  Footer Resource Links
+                </a>
               </div>
           </nav>
         </div>

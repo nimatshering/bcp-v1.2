@@ -1,5 +1,5 @@
-<div class="container md:pr-4 w-full mx-2 md:mx-0">
-    <div class="flex flex-col md:flex-col gap-2 justify-center">
+<div class="container md:pr-4 w-full">
+    <div class="flex flex-col md:flex-col gap-2 justify-center mx-2 md:mx-0">
       @foreach ($subcategories as $item)
        <div class="mb-2 shrink">
           <div class="flex max-w-sm w-full bg-gray-50 shadow rounded overflow-hidden mx-auto {{ request()->is('climate-science-research/category/'.$item->slug) ? 'bg-green-300' : 'bg-white'}}">

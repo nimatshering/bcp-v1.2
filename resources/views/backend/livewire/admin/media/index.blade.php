@@ -75,8 +75,8 @@
       </div>
     </div>
         <!-- Add/Edit Modal -->
-        @include('backend.livewire.agency.media.partials._addModal')
+        @include('backend.livewire.admin.media.partials._addModal')
          <!--Delete Modal -->
-        @include('backend.livewire.agency.media.partials._deleteModal')
+        @include('backend.livewire.admin.media.partials._deleteModal')
     </div>
 </div>

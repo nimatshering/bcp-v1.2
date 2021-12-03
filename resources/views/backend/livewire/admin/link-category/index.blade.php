@@ -61,7 +61,7 @@
 											</td>
 
                       	<td class = 'text-center'>
-                          <a href='{{ route('agency.links', $item->id)}}' class ="px-4 py-2 bg-green-400 rounded">
+                          <a href='{{ route('admin.links', $item->id)}}' class ="px-4 py-2 bg-green-400 rounded">
                             <i class="fa fa-cubes pr-2"></i><span class="text-xs">{{ $item->links->count()}}</span>
                           </a>
                         </td>
@@ -83,8 +83,8 @@
         </div>
       </div>
         <!-- Add/Edit Modal -->
-        @include('backend.livewire.agency.link-category.partials._addModal')
+        @include('backend.livewire.admin.link-category.partials._addModal')
          <!--Delete Modal -->
-        @include('backend.livewire.agency.link-category.partials._deleteModal')
+        @include('backend.livewire.admin.link-category.partials._deleteModal')
     </div>
 </div>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Agency;
+namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use Livewire\WithPagination;
@@ -34,7 +34,7 @@ class Medias extends Component
     public function render()
     {
       $medias = Media::orderBy('created_at','desc')->paginate(10);
-      return view('backend.livewire.agency.media.index', compact('medias'));
+      return view('backend.livewire.admin.media.index', compact('medias'));
     }
 
     /**
@@ -87,7 +87,7 @@ class Medias extends Component
       $media->delete();
       $this->confirmItemDeletion = false;
       session()->flash('message', 'media deleted successfully.');
-      return redirect()->route('agency.medias');
+      return redirect()->route('admin.medias');
     }
 
       /**

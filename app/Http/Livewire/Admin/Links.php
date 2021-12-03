@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Agency;
+namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Link;
@@ -40,7 +40,7 @@ class Links extends Component
     {
       $links = Link::orderBy('created_at','desc')
 				->where('link_id','=',$this->link_id)->paginate(10);
-      return view('backend.livewire.agency.links.index', compact('links'));
+      return view('backend.livewire.admin.links.index', compact('links'));
     }
 
     /**
@@ -68,7 +68,7 @@ class Links extends Component
         $this->resetErrorBag(['link']);
         $this->confirmItemAdd = false;
         $this->link = null;
-        return redirect()->route('agency.links', $this->link_id);
+        return redirect()->route('admin.links', $this->link_id);
     }
 
     /**
@@ -103,7 +103,7 @@ class Links extends Component
         session()->flash('message', 'Document link deleted successfully.');
         $this->reset(['link']);
         $this->link = null;
-        return redirect()->route('agency.links');
+        return redirect()->route('admin.links',$this->link_id);
     }
 
 

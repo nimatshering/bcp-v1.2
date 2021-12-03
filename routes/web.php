@@ -20,6 +20,9 @@ use App\Http\Livewire\Admin\Csrcategories;
 use App\Http\Livewire\Admin\Csrsubcategories;
 use App\Http\Livewire\Admin\Statistics;
 use App\Http\Livewire\Admin\Abouts;
+use App\Http\Livewire\Admin\Medias;
+use App\Http\Livewire\Admin\Linkcategories;
+use App\Http\Livewire\Admin\Links;
 
 use App\Http\Livewire\Agency\Climatescienceresearchs;
 use App\Http\Livewire\Agency\Faqs;
@@ -27,7 +30,6 @@ use App\Http\Livewire\Agency\Posts;
 use App\Http\Livewire\Agency\Events;
 use App\Http\Livewire\Agency\Experts;
 use App\Http\Livewire\Agency\Guidancedocuments;
-use App\Http\Livewire\Agency\Medias;
 
 use App\Http\Controllers\Agency\AgencyController;
 use App\Http\Controllers\Agency\ProgramprojectController;
@@ -43,8 +45,7 @@ use App\Http\Livewire\Agency\WaterProjectedDatas;
 use App\Http\Livewire\Agency\GreenhouseGases;
 use App\Http\Livewire\Agency\DisasterDatas;
 use App\Http\Livewire\Agency\DisasterImpacts;
-use App\Http\Livewire\Agency\Linkcategories;
-use App\Http\Livewire\Agency\Links;
+
 
 // use App\Http\Livewire\Admin\Forumcategories;
 // use App\Http\Livewire\Forum\Forums;
@@ -204,6 +205,9 @@ use App\Http\Livewire\Reports\LandingReport;
       Route::get('/dashboard/statistics', Statistics::class)->name('statistics');
 
       Route::get('/dashboard/abouts', Abouts::class)->name('about');
+      Route::get('/dashboard/link/category', Linkcategories::class)->name('link.category');
+      Route::get('/dashboard/links/{link_id}', Links::class)->name('links');
+      Route::get('/dashboard/media-gallery', Medias::class)->name('medias');
     });
 
     /*---------------------------------------------------------------------------------------
@@ -217,14 +221,10 @@ use App\Http\Livewire\Reports\LandingReport;
       Route::resource('/dashboard/trainingmaterial', TrainingmaterialController::class);
       Route::resource('/dashboard/researchstudy', ResearchstudyController::class);
 
-      Route::get('/dashboard/link/category', Linkcategories::class)->name('link.category');
-      Route::get('/dashboard/links/{link_id}', Links::class)->name('links');
-
       Route::get('/dashboard/faqs', Faqs::class)->name('faqs');
       Route::get('/dashboard/posts/{postype}', Posts::class)->name('posts');
       Route::get('/dashboard/events', Events::class)->name('events');
       Route::get('/dashboard/experts', Experts::class)->name('experts');
-      Route::get('/dashboard/media-gallery', Medias::class)->name('medias');
       Route::get('/dashboard/guidance-document/{catID}', Guidancedocuments::class)->name('guidance.document');
       // Route::get('/dashboard/forum-post', Forums::class)->name('forum.index');
 

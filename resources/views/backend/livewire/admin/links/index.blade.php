@@ -3,7 +3,7 @@
     <ol class="list-reset flex text-grey-dark text-xs uppercase pl-4">
       <li><a href="{{ route('admin.dashboard') }}" class="text-blue font-bold">Home</a></li>
       <li><span class="mx-2">/</span></li>
-      <li><a href="{{ route('agency.link.category') }}" class="text-blue font-bold">Link Category</a></li>
+      <li><a href="{{ route('admin.link.category') }}" class="text-blue font-bold">Link Category</a></li>
       <li><span class="mx-2">/</span></li>
       <li>Links</li>
     </ol>
@@ -75,8 +75,8 @@
         </div>
       </div>
         <!-- Add/Edit Modal -->
-        @include('backend.livewire.agency.links.partials._addModal')
+        @include('backend.livewire.admin.links.partials._addModal')
          <!--Delete Modal -->
-        @include('backend.livewire.agency.links.partials._deleteModal')
+        @include('backend.livewire.admin.links.partials._deleteModal')
     </div>
 </div>

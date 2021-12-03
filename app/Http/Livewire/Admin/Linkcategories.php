@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Agency;
+namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Linkcategory;
@@ -29,7 +29,7 @@ class Linkcategories extends Component
     public function render()
     {
         $categories = Linkcategory::all();
-        return view('backend.livewire.agency.link-category.index',compact('categories'));
+        return view('backend.livewire.admin.link-category.index',compact('categories'));
     }
 
 
@@ -56,7 +56,7 @@ class Linkcategories extends Component
         $this->resetErrorBag(['category']);
         $this->confirmItemAdd = false;
         $this->category = null;
-        return redirect()->route('agency.link.category');
+        return redirect()->route('admin.link.category');
     }
 
     /**
@@ -91,7 +91,7 @@ class Linkcategories extends Component
         session()->flash('message', 'Link category deleted successfully.');
         $this->reset(['category']);
         $this->category = null;
-        return redirect()->route('agency.link.category');
+        return redirect()->route('admin.link.category');
     }
 
 

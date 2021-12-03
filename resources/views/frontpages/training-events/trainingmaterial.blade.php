@@ -18,11 +18,9 @@
         </div>
         <div class="w-full md:w-9/12 mt-4 md:mt-0">
             @foreach ($trainingmaterials as $item)
-              <div class="md:flex shadow mx-4 md:mx-6 md:mx-auto bg-white rounded-lg mb-4">
+              <div class="md:flex shadow mx-4 md:mx-6 bg-white rounded-lg mb-4">
                 <div class="w-full md:w-2/3 p-6  rounded-lg">
-                      <h2 class="text-xl text-gray-800 font-medium mr-auto mb-2">{{ $item->name }}</h2>
-                      <h2 class=" text-gray-800 font-medium mr-auto">{{ $item->videolink }}</h2>
-                      <h2 class=" text-gray-800 font-medium mr-auto">{{ $item->otherlink }}</h2>
+                      <h2 class="text-gray-800 font-bold mr-auto mb-2">{{ $item->name }}</h2>
                     <p class="text-sm text-gray-700 mt-4">
                       {!! $item->description !!}
                     </p>

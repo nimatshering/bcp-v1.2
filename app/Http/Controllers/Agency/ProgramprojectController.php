@@ -94,9 +94,8 @@ class ProgramprojectController extends Controller
      */
      public function update(Request $request, $id)
     {
-     
       $request->validate([
-        'title' => 'required',
+        'title' => 'nullable',
         'funding' => 'required',
         'amount' => 'required',
         'agency' => 'required',
@@ -107,7 +106,7 @@ class ProgramprojectController extends Controller
         'description' => 'nullable',
         'category_id' => 'required',
       ]);
-       
+    
       $programproject = Programproject::findOrFail($id);
       $programproject->title = $request->input('title');
       $programproject->slug = Str::slug($request->input('title'), '-');
