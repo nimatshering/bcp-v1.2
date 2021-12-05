@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Livewire\Agency;
+use Livewire\WithFileUploads;
 
 use Livewire\Component;
 use Illuminate\Http\Request;
@@ -11,10 +12,14 @@ use App\Models\DisasterData;
 use Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\DisasterDataImport;
+use Faker\Guesser\Name;
 
 class DisasterDatas extends Component
 {
     public $data;
+    use WithFileUploads;
+    public $report;
+    public $filename;
 
     public $confirmItemDeletion = false;
     public $confirmItemAdd = false;
@@ -45,6 +50,13 @@ class DisasterDatas extends Component
     public function store()
     {
         $this->validate();
+        if(!empty($this->report)){
+            $this->validate(['report' => 'file|mimes:jpeg,png,jpg,pdf,doc,docx,xls,xlsx|max:50000' ]);
+            $this->filename = $this->report->storeAs('disasters', time().'.'.$this->report->extension(),'uploads');
+            }else{
+                $this->filename = null;
+            }
+            
          if(isset($this->data->id)){
             $this->data->save();
             session()->flash('message', 'Disaster Data successfully updated!');
@@ -53,7 +65,7 @@ class DisasterDatas extends Component
             'dzongkhag_id' =>   $this->data['dzongkhag_id'], 
             'type_id' =>   $this->data['type_id'], 
             'disaster_date' =>   $this->data['disaster_date'], 
-            'report_link' =>   $this->data['report_link'], 
+            'report_link' =>   $this->filename, 
             'data_source' =>   $this->data['data_source'], 
             'remarks' =>   $this->data['remarks'], 
             'user_id' => Auth::user()->id,
