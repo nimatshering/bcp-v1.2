@@ -25,7 +25,7 @@
             month = document.getElementById("month").value;
             load_regression_data(start_year,end_year,station,parameter,chartType,month);
         }
-        else if(chartType == "line"  || chartType == "column"){
+        else {//if(chartType == "line"  || chartType == "column"){
           load_data(start_year, end_year, station,parameter,chartType);
         }
       });
@@ -48,10 +48,12 @@
           
           dataType: "JSON",
           error: function(req, err){ 
+            $("p.error").html("Something went wrong. Please check parameters and try again !!!");
+            Highcharts.chart('container',"");
             console.log('my message :' + err); 
           },
           success:function(data) {
-            //console.log(data);
+            $("p.error").html("");
             renderChart(data,chartType);
 
           } 
@@ -117,6 +119,9 @@
       },
       title: {
           text: 'Monthly Flow'
+      },
+      subtitle: {
+          text: 'Source: National Center for Hydology and Meteorological'
       },
       xAxis: {
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

@@ -68,7 +68,9 @@
                 Draw Chart
               </button>
             </div>
-
+          </div>
+          <div class="my-2 text-center">
+            <p class="error"></p>
           </div>
         </div>
         </div>

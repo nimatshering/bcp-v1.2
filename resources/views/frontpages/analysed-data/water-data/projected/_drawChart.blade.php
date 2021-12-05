@@ -52,10 +52,13 @@
           
           dataType: "JSON",
           error: function(req, err){ 
+            $("p.error").html("Something went wrong. Please check parameters and try again !!!");
+            Highcharts.chart('container',"");
             console.log('my message :' + err); 
           },
           success:function(data) {
-            console.log(data);
+            $("p.error").html("");
+            //console.log(data);
             renderChart(data,chartType);
 
           } 
@@ -128,7 +131,7 @@
           text: 'Monthly Flow - Projected'
       },
       subtitle: {
-          text: ''
+          text: 'Source: National Center for Hydology and Meteorological'
       },
       xAxis: {
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],

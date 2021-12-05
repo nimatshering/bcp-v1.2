@@ -159,6 +159,16 @@
               </div>  
               </div>
           @endif
+          @else
+              <div class="min-w-full rounded shadow overflow-hidden my-4">
+              <div class="flex">
+                <div class="w-full bg-gray-50 justify-center">
+                  <div class="overflow-hidden p-10 text-center font-bold">
+                    Sorry! No Data Found.
+                  </div>
+                </div>
+              </div>  
+              </div>
         </div>
       @endif
     </div>
