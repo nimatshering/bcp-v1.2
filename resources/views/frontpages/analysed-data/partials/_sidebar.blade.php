@@ -61,7 +61,7 @@
             <div class="w-4 bg-green-600"></div>
             <div class="w-full p-2">
                 <a href="{{ route('researchstudies') }}">
-                  <h2 class="flex font-semibold text-sm gap-2 p-2"> Research Study Documents (Datasets) </h2>
+                  <h2 class="flex font-semibold text-sm gap-2 p-2"> Assesement datasets </h2>
                 </a>
             </div>
           </div>

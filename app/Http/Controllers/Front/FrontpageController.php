@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Faq;
 use App\Models\Post;
 use App\Models\Event;
-use App\Models\About;
+use App\Models\Staticcontent;
 use App\Models\Guidancecategory;
 use App\Models\Guidancedocumentcategory;
 use App\Models\Guidancedocument;
@@ -48,7 +48,8 @@ class FrontpageController extends Controller
     {
         $categories = Csrcategory::all();
         $subcategories = Csrsubcategory::all();
-        return view('frontpages.climate-science-research.index',compact('categories','subcategories'));
+        $climatescience = Staticcontent::where('type','project-programs')->first();
+        return view('frontpages.climate-science-research.index',compact('categories','subcategories','climatescience'));
     }
     
 
@@ -102,7 +103,8 @@ class FrontpageController extends Controller
     {
         $guidancecategories = Guidancecategory::all();
         $guidancedocumentcategories = Guidancedocumentcategory::all();
-        return view('frontpages.guidance-document.index',compact('guidancecategories','guidancedocumentcategories'));
+        $guidancedocument = Staticcontent::where('type','guidance-documents')->first();
+        return view('frontpages.guidance-document.index',compact('guidancecategories','guidancedocumentcategories','guidancedocument'));
     }
     
 
@@ -153,7 +155,8 @@ class FrontpageController extends Controller
     public function projectprograms()
     {
         $programprojectcategories = Programprojectcategory::all();
-        return view('frontpages.project-program.index',compact('programprojectcategories'));
+        $projectprogramtext = Staticcontent::where('type','project-programs')->first();
+        return view('frontpages.project-program.index',compact('programprojectcategories','projectprogramtext'));
     }
 /*-------------------------------------------------------------------------
     | Show science and research page 
@@ -163,7 +166,7 @@ class FrontpageController extends Controller
     {
       $programprojectcategories = Programprojectcategory::all();
       $programprojectcategory = Programprojectcategory::where('slug',$slug)->first();
-      $publications = $programprojectcategory->projects()->latest()->where('status','!=','completed')->paginate(10);
+      $publications = $programprojectcategory->projects()->latest()->where('status','!=','completed')->paginate(5);
       return view('frontpages.project-program.publications', compact('programprojectcategories','programprojectcategory','publications'));
     }
 
@@ -245,7 +248,8 @@ class FrontpageController extends Controller
     **/
     public function trainingEvents()
     {
-        return view('frontpages.training-events.post');
+        $trainingevents = Staticcontent::where('type','training-events')->first();
+        return view('frontpages.training-events.post',compact('trainingevents'));
     }
 
     /*------------------------------------------------------------------------
@@ -298,9 +302,11 @@ class FrontpageController extends Controller
     **/
     public function about()
     {
-        $about = About::latest()->first();
+        $about = Staticcontent::where('type','about')->first();
         return view('frontpages.about', compact('about'));
     }
+
+     
     
     /*------------------------------------------------------------------------
     | Show  contact us page

@@ -2,7 +2,7 @@
   <x-utilities.modals.open-button btntext="Add New User" btncolor="blue"/>
       <!-- Modal Dialog  -->
   <div class="flex flex-wrap mx-auto">
-    <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);" x-show="open"  >
+    <div class="z-50 absolute top-0 left-0 flex items-center justify-center w-full h-full" style="background-color: rgba(0,0,0,.5);" x-show="open"  >
       <div class="h-auto w-full mx-2 text-left bg-white rounded-lg shadow-xl md:max-w-2xl md:mx-0" @click.away="open = false">
         <div class="flex justify-between bg-gray-50 rounded-lg">
           <div class="flex justify-between items-center px-6 py-4">

@@ -133,9 +133,9 @@ class ProgramprojectController extends Controller
      */
     public function destroy($id)
     {
-        $programproject = Researchstudy::findOrFail($id);
+        $programproject = Programproject::findOrFail($id);
         $programproject->delete();
-        session()->flash('message', 'Research study updated successfully');
-        return redirect()->route('agency.programprojects.index');
+        session()->flash('message', 'Programproject deleted successfully');
+        return redirect()->route('agency.programprojects.show', $programproject->category_id);
     }
 }

@@ -21,15 +21,7 @@
         <div class="w-full md:w-9/12">
           <div class="flex flex-wrap">
             <div class="w-full p-4 mx-4 md:mx-0 shadow">
-              <p class="text-justify py-2">
-                Bhutan can also be characterized into six agro-climatic regions: alpine, cool temperate, warm temperate, dry 
-                sub-tropical, humid sub-tropical, and wet-sub tropical. Climate varies dramatically because of the countries 
-                varied topography and geographical location at the edge of the tropical circulation in then north and Asian 
-                monsoon circulation in the south. The northern part of the country is characterized by snowcapped peaks of 
-                elevations above 7,300 meters with abundant glaciers and alpine pastures. Regions at lower elevations and closer 
-                to the south tend to have higher temperatures as well as more precipitation while the northern regions of the 
-                country are often cooler and experiences less precipitation.
-              </p>
+              {!! $datatext->content !!}
             </div>
           </div>
         </div>

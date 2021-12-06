@@ -1,7 +1,7 @@
  <!-- Show add/Edit Modal -->
       <x-jet-dialog-modal wire:model="confirmItemAdd">
           <x-slot name="title">
-              {{ isset( $this->about->id) ? 'Edit' : 'Add' }}
+              {{ isset( $this->staticcontent->id) ? 'Edit' : 'Add' }}
           </x-slot>
 
           <x-slot name="content">
@@ -9,8 +9,8 @@
               <div class="mt-4">
                   <div class="col-span-6 sm:col-span-4">
                       <x-jet-label for="title" value="{{ __('Title') }}" />
-                      <x-jet-input id="title" type="text" class="mt-1 block w-full" wire:model.defer="about.title" />
-                      <x-jet-input-error for="about.title" class="mt-2" />
+                      <x-jet-input id="title" type="text" class="mt-1 block w-full" wire:model.defer="staticcontent.title" />
+                      <x-jet-input-error for="staticcontent.title" class="mt-2" />
                   </div>
               </div>
 
@@ -25,21 +25,21 @@
 											x-ref="trix"
 											x-data
 											x-on:trix-change="$dispatch('input', event.target.value)"
-											wire:model.defer="about.content"
+											wire:model.defer="staticcontent.content"
 											wire:key="trix-content-unique-key">
 										</trix-editor>
 									</div>
 								</div>
 							</div>
-              <x-jet-input-error for="about.content" class="mt-2" />
+              <x-jet-input-error for="staticcontent.content" class="mt-2" />
             </div> 
 
              <!-- Photo -->
           <!-- Display image -->
-              @if (isset($this->about->id))
+              @if (isset($this->staticcontent->id))
                   <div class="col-span-6 sm:col-span-4 mt-4">
-                      <x-jet-label value="{{ __('About Photo') }}"  class="py-2"/>
-                      <img src=" {{ asset('uploads/'.$this->about->photo)}}" alt="about">
+                      <x-jet-label value="{{ __('Photo') }}"  class="py-2"/>
+                      <img src=" {{ asset('uploads/'.$this->staticcontent->photo)}}" alt="staticcontent">
                   </div>
               @endif
 

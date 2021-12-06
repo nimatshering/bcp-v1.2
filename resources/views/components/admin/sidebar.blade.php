@@ -2,8 +2,8 @@
     class="fixed z-20 inset-0 opacity-50 transition-opacity lg:hidden ">
 </div>
   <!-- sidebar -->
-  <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-    class="fixed z-30 inset-y-0 left-0 w-80 transition duration-300  transform bg-green-800 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+  <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in text-xs md:text-sm'"
+    class="fixed z-30 inset-y-0 left-0 w-64 md:w-80 transition duration-300  transform bg-green-800 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
     <div class="flex flex-col sm:flex-row sm:justify-around">
       <div class="w-full mt-6">
            <!--Home -->
@@ -107,7 +107,6 @@
           </button>
           <nav class="flex flex-col mx-3 overflow-hidden">
               <div x-show="open" x-on:click.away="open = false" >
-                
                  <a class="dropdown-menu-item text-white" href="{{ route('admin.sectors') }}">
                   <i class="fa fa-angle-right text-sm mr-2"></i>
                   Sectors
@@ -179,7 +178,7 @@
           <button @click="open = !open" class="rounded bg-green-600 hover:bg-green-500 w-full flex justify-between items-center text-white p-2 focus:outline-none">
             <span class="flex items-center justify-between w-full">
               <span class="px-2 text-xs font-bold uppercase">
-                <i class="fa fa-comments pr-2"></i> Content Management
+                <i class="fa fa-th-list pr-2"></i> Content
               </span>
               <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path x-show="! open" d="M9 5L16 12L9 19" stroke="currentColor" stroke-width="2"
@@ -191,9 +190,9 @@
           </button>
           <nav class="flex flex-col mx-3 overflow-hidden">
               <div x-show="open" x-on:click.away="open = false" >
-                <a class="dropdown-menu-item text-white" href="{{ route('admin.about') }}">
+                <a class="dropdown-menu-item text-white" href="{{ route('admin.staticcontents') }}">
                   <i class="fa fa-angle-right text-sm mr-2"></i>
-                  About
+                  Static Content
                 </a>
                 <a class="dropdown-menu-item text-white" href="{{ route('admin.medias') }}">
                   <i class="fa fa-angle-right text-sm mr-2"></i>
@@ -202,7 +201,7 @@
 
                  <a class="dropdown-menu-item text-white" href="{{ route('admin.link.category') }}">
                   <i class="fa fa-angle-right text-sm mr-2"></i>
-                  Footer Resource Links
+                  Footer Links
                 </a>
               </div>
           </nav>

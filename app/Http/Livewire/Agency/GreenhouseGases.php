@@ -32,7 +32,7 @@ class GreenhouseGases extends Component
     public function render()
     {
       $sectorlist = Sector::all();
-      $datalist = Greenhousegas::orderBy('date_of_reading','desc')->get();
+      $datalist = Greenhousegas::orderBy('year','desc')->get();
       $parameterlist = Parameter::all();
       return view('backend.livewire.agency.ghg-data.greenhouse-gases', compact('datalist','parameterlist', 'sectorlist'));
     }

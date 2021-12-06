@@ -3,7 +3,7 @@
 </div>
   <!-- sidebar -->
   <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-    class="fixed z-30 inset-y-0 left-0 w-80 transition duration-300  transform bg-green-800 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+    class="fixed z-30 inset-y-0 left-0 w-64 mx-60 md:w-80 transition duration-300  transform bg-green-800 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
     <div class="flex flex-col sm:flex-row sm:justify-around">
       <div class="w-full mt-6">
         <!--Home -->
@@ -250,7 +250,7 @@
          <!-- Research Study Documents -->
         <a href="{{ route('agency.researchstudy.index') }}">
           <h1 class="mx-4 p-4 font-extrabold rounded uppercase text-xs bg-green-600 hover:bg-green-500 text-white py-3 mb-2">
-             Research Study Documents
+             Assesement Datasets
           </h1>
         </a>
 
@@ -260,8 +260,6 @@
              Faqs
           </h1>
         </a>
-
-        
 
           {{-- <!-- Discussion Forum -->
         <a href="{{ route('agency.forum.index') }}">

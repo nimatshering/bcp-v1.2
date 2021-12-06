@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Grid;
 use App\Models\Station;
 use App\Models\Parameter;
+use App\Models\Staticcontent;
 use App\Models\WaterObservedData;
 use Carbon\Carbon;
 use App\Models\ClimateModel;
@@ -30,7 +31,8 @@ class DatareportController extends Controller
     */
     public function analysedData()
     {
-     return view('frontpages.analysed-data.index');
+     $datatext = Staticcontent::where('type','data-text')->first();
+     return view('frontpages.analysed-data.index', compact('datatext'));
     }
 
 

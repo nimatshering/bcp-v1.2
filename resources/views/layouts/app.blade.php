@@ -6,7 +6,7 @@
  <body class="font-sans antialiased">
   <section class="my-2">
     <div x-data="{ sidebarOpen: false}">
-      <div class="flex min-h-screen bg-white flex-grow">
+      <div class="flex min-h-screen flex-grow">
           @can('is-admin')
             <x-admin.sidebar /> 
           @endcan

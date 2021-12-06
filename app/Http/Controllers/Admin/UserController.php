@@ -38,7 +38,7 @@ class UserController extends Controller
         $user = $newUser->create($request->only(['name','email','password','password_confirmation']));
         $user->roles()->sync($request->roles);
 
-        Password::sendResetLink($request->only(['email']));
+        // Password::sendResetLink($request->only(['email']));
         $request->session()->flash('success', 'Users created successfully ');
         return redirect(route('admin.users.index'));
 

@@ -47,6 +47,7 @@ class Climatescienceresearchs extends Component
     public function render()
     {
       $subcategories = Csrsubcategory::where('cat_id',$this->catID)->get();
+      // dd($subcategories);
       return view('backend.livewire.agency.climate-science-research.index', compact('subcategories'));
     }
 

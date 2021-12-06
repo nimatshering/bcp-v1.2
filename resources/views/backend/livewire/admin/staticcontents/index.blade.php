@@ -6,7 +6,7 @@
     <ol class="list-reset flex text-grey-dark">
       <li><a href="{{ route('admin.dashboard') }}" class="text-blue font-bold">Home</a></li>
       <li><span class="mx-2">/</span></li>
-      <li>About</li>
+      <li>Static Content</li>
     </ol>
   </nav>
 
@@ -17,11 +17,11 @@
     <div class="mx-auto sm:px-6 lg:px-8">
       <div class="flex justify-between">
           <div class="flex flex-col p-2 my-2 font-semibold text-xl">
-            About
+            Static Content
           </div>
-          <x-jet-button wire:click="$toggle('confirmItemAdd')" class="bg-blue-500 hover:bg-blue-700 mb-6">
+          {{-- <x-jet-button wire:click="$toggle('confirmItemAdd')" class="bg-blue-500 hover:bg-blue-700 mb-6">
               Add New 
-          </x-jet-button>
+          </x-jet-button> --}}
       </div>
       
       <div class="flex flex-col">
@@ -42,7 +42,7 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
-              @foreach($abouts as $item)
+              @foreach($staticcontents as $item)
               <tr class="hover:bg-gray-50">
                 <td class="px-6 py-4 whitespace-nowrap">
                   <div class="flex items-center">
@@ -75,7 +75,7 @@
       </div>
     </div>
         <!-- Add/Edit Modal -->
-        @include('backend.livewire.admin.abouts.partials._addModal')
+        @include('backend.livewire.admin.staticcontents.partials._addModal')
          <!--Delete Modal -->
     </div>
 </div>

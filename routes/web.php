@@ -19,7 +19,7 @@ use App\Http\Livewire\Admin\Programprojectcategories;
 use App\Http\Livewire\Admin\Csrcategories;
 use App\Http\Livewire\Admin\Csrsubcategories;
 use App\Http\Livewire\Admin\Statistics;
-use App\Http\Livewire\Admin\Abouts;
+use App\Http\Livewire\Admin\Staticcontents;
 use App\Http\Livewire\Admin\Medias;
 use App\Http\Livewire\Admin\Linkcategories;
 use App\Http\Livewire\Admin\Links;
@@ -204,7 +204,7 @@ use App\Http\Livewire\Reports\LandingReport;
       Route::get('/dashboard/parameters', Parameters::class)->name('parameters');
       Route::get('/dashboard/statistics', Statistics::class)->name('statistics');
 
-      Route::get('/dashboard/abouts', Abouts::class)->name('about');
+      Route::get('/dashboard/staticcontents', Staticcontents::class)->name('staticcontents');
       Route::get('/dashboard/link/category', Linkcategories::class)->name('link.category');
       Route::get('/dashboard/links/{link_id}', Links::class)->name('links');
       Route::get('/dashboard/media-gallery', Medias::class)->name('medias');

@@ -80,6 +80,14 @@
                               {!! $item->agency !!}
                             </dd>
                           </div>
+                          <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                              Project Status:
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                              {!! $item->status !!}
+                            </dd>
+                          </div>
                         </dl>
                         <div class='flex flex-wrap items-center has-tooltip gap-2'>
                            <p class="p-4 font-bold uppercase text-xs">Project Documents</p>
