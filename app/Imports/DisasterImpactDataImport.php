@@ -18,11 +18,23 @@ class DisasterImpactDataImport implements ToModel, WithHeadingRow
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
+    private $disasterId;
+    //private $parameterId;
+    private $dzongkhagId;
+    public function __construct($did, $dzid)
+    {
+        //dd($did);
+        $this->disasterId = $did;
+        //$this->parameterId = $pid;
+        $this->dzongkhagId = $dzid;
+        //dd($this->stationId);
+    }
     public function model(array $row)
     {
         return new DisasterImpact([
-            'disaster_id' => $row['disaster_id'],
+            'disaster_id' => 1,//$this->disasterId,//row['disaster_id'],
             'parameter_id' => $row['parameter_id'],
+            'dzongkhag_id' => 1,//$this->dzongkhagId,
             'value' => $row['value'],
             'description' => $row['description'],
             'user_id' =>  Auth::user()->id,

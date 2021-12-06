@@ -9,6 +9,7 @@ use App\Models\DisasterParameter;
 use Auth;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Imports\DisasterImpactDataImport;
+use App\Models\DisasterData;
 
 class DisasterImpacts extends Component
 {
@@ -17,6 +18,9 @@ class DisasterImpacts extends Component
     public $confirmItemDeletion = false;
     public $confirmItemAdd = false;
     public $disaster_id;
+    public $dzongkhag_id;
+    public $type_id;
+    public $parameter_id;
 
     protected $rules = [
         'data.parameter_id' => 'required', 
@@ -31,7 +35,11 @@ class DisasterImpacts extends Component
      */
     public function mount($disaster)
     {
+        //dd($disaster);
       $this->disaster_id = $disaster;
+      $dz_id = DisasterData::select('dzongkhag_id')->where('id',$this->disaster_id)->get();
+      $this->dzongkhag_id = $dz_id[0]->dzongkhag_id;
+      //dd($this->dzongkhag_id);
     }
 
     /**
@@ -58,6 +66,7 @@ class DisasterImpacts extends Component
         }else{
             DisasterImpact::create([
             'disaster_id' =>   $this->disaster_id, 
+            'dzongkhag_id' => $this->dzongkhag_id,
             'parameter_id' =>   $this->data['parameter_id'], 
             'value' =>   $this->data['value'], 
             'description' =>   $this->data['description'], 
@@ -65,6 +74,7 @@ class DisasterImpacts extends Component
             ]);
             session()->flash('message', 'Disaster Impact Data successfully created!');
          }
+         $this->parameter_id = $this->data['parameter_id'];
         $this->reset(['data']);
         $this->confirmItemAdd = false;
         $this->data = null;
@@ -120,7 +130,7 @@ class DisasterImpacts extends Component
      public function disasterImpactExcelImport(Request $request)
     {
       $file = $request->file('datafile');
-      Excel::import(new DisasterImpactDataImport,$file);
+      Excel::import(new DisasterImpactDataImport($this->disaster_id, $this->dzongkhag_id),$file);
       session()->flash('message', 'Excel data successfully imported!');
       return back();
     }

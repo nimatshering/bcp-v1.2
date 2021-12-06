@@ -133,7 +133,9 @@ class DisasterDatas extends Component
     public function disasterExcelImport(Request $request)
     {
       $file = $request->file('datafile');
-      Excel::import(new DisasterDataImport,$file);
+      $dzongkhagId = $request->dzongkhag;
+      $parameterId = $request->parameter;
+      Excel::import(new DisasterDataImport($dzongkhagId,$parameterId),$file);
       session()->flash('message', 'Excel data successfully imported!');
       return back();
     }

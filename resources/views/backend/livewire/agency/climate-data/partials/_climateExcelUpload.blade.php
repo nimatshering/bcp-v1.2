@@ -1,5 +1,5 @@
 <!-- Import from Excel File-->
-<div class="flex w-full">
+<div class="flex w-full"> 
    <form action="{{ route('agency.climate.observed.xls.import') }}" method="POST" enctype="multipart/form-data">
     @csrf
     

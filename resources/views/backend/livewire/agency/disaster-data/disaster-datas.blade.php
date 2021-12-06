@@ -49,7 +49,7 @@
                               Dzongkhag
                           </th>
                           <th scope="col" class="flex px-6 py-4 text-left tracking-wider ">
-                              Disaster Type
+                              Hazard Type
                           </th>
                           <th scope="col" class="px-6 py-4 text-left tracking-wider">
                               Year
@@ -145,9 +145,9 @@
                 <!-- Disaster Type -->
                 <div class="mt-4">
                   <div class="col-span-6 sm:col-span-4">
-                  <x-jet-label for="parameter_id" value="{{ __('Select Disaster Type') }}" />
+                  <x-jet-label for="parameter_id" value="{{ __('Select Hazard Type') }}" />
                     <select wire:model.defer="data.type_id"  type="text" class="form-control mt-1 block w-full">
-                        <option value="">Select Disaster Type</option>
+                        <option value="">Select Hazard Type</option>
                         @foreach ($typelist as $item)
                             <option value="{{ $item->id }}" >{{ $item->name }}</option>
                         @endforeach
@@ -177,7 +177,7 @@
                 <!-- Report -->
                  <div class="mt-4">
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="report" value="{{ __('Uplod Report') }}" />
+                    <x-jet-label for="report" value="{{ __('Upload Report') }}" />
                     <x-jet-input id="report" type="file" class="form-control mt-1 block w-full" wire:model.defer="report" />
                     <x-jet-input-error for="report" class="mt-2" />
                 </div>
