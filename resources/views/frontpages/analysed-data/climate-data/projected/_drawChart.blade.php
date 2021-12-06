@@ -19,6 +19,11 @@
           var scenerio = document.getElementById("scenerio").value;
           var chartType = document.getElementById("statistic").value;
           var month = "Jan";
+          var parameterType = '';
+        if(parameter == 1)
+          parameterType = 'Precipitation (mm)';
+        else
+          parameterType = 'Temperature (Deg C)';
         if(chartType == "boxplot"){
           load_boxplot_data(start_year, end_year, station,parameter,chartType, model, scenerio);
         }else if(chartType == "linear"  || chartType == "polynomial")
@@ -28,7 +33,7 @@
             load_regression_data(start_year, end_year, station,parameter,chartType,month,model, scenerio);
         }
         else{
-          load_data(start_year, end_year, station,parameter,chartType,model, scenerio);
+          load_data(start_year, end_year, station,parameter,chartType,model, scenerio, parameterType);
         }
           
       });
@@ -37,7 +42,7 @@
   
  
  //function to load data
-  function load_data(start_year,end_year,station, parameter,chartType,model, scenerio) {
+  function load_data(start_year,end_year,station, parameter,chartType,model, scenerio,parameterType) {
       $.ajax({
           url: '/report/fetch_climate_data',
           method:"POST",
@@ -53,11 +58,14 @@
           
           dataType: "JSON",
           error: function(req, err){ 
+            $("p.error").html("Something went wrong. Please check parameters and try again !!!");
+            Highcharts.chart('container',"");
             console.log('my message :' + err); 
           },
           success:function(data) {
+            $("p.error").html("");
             console.log(data);
-            renderChart(data,chartType);
+            renderChart(data,chartType,parameterType);
 
           } 
       });
@@ -122,7 +130,7 @@
   }
 
 //function render chart
-  function renderChart(data,chartType) {
+  function renderChart(data,chartType,parameterType) {
     Highcharts.chart('container', {
       chart: {
           type: chartType
@@ -131,14 +139,14 @@
           text: 'Monthly Observsation'
       },
       subtitle: {
-          text: 'Source: ......'
+          text: 'Source: National Center for Hydology and Meteorological'
       },
       xAxis: {
           categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
       },
       yAxis: {
           title: {
-              text: 'Precipitation (mm)/ Temperature (Deg C)'
+              text: parameterType //'Precipitation (mm)/ Temperature (Deg C)'
           }
       },
        credits: {

@@ -55,9 +55,11 @@
                 </button>
               </div>
           </div>
+          <div class="my-2 text-center">
+            <p class="error"></p>
+          </div>
         </div>
       </div>
-
       <div class="container mx-auto md:p-10 w-full md:w-11/12"> 
         <figure class="highcharts-figure">
             <div id="container"></div>

@@ -190,6 +190,7 @@ class DatareportController extends Controller
         $disaster = [];
         $data = [];
         $disaster_id = 1;
+        //dd($disaster_id);
         $disaster_name = DisasterType::where('id', $disaster_id)
                           ->first()->name;
         $disasterType = DisasterType::select('id','name')->get();
@@ -230,11 +231,22 @@ class DatareportController extends Controller
       {
         $data = [];
         $year = $request->input('year');
+        $disasterType = DisasterType::select('id','name')->get();
         $disaster_id = $request->input('disasterId');
+        if ($disaster_id == 'Choose Disaster Type')
+        {
+          $disaster = [];
+          //$disasterType = "";
+          //$year = "";
+          $disaster_name ="Something wrong, please check parameters.";
+          return view('frontpages.analysed-data.disaster-data.map',compact('disaster', 'disasterType', 'year','disaster_name'));
+     
+        }
+        
         $disaster_name = DisasterType::where('id', $disaster_id)
                           ->first()->name;
                           //dd($disaster_name);
-        $disasterType = DisasterType::select('id','name')->get();
+        
         $tdata = DisasterData::join('dzongkhags', 'dzongkhags.id', '=', 'disaster_data.dzongkhag_id')
             //->where('climate_observed_data.parameter_id', '=', '2')
             ->whereYear('disaster_data.disaster_date', '=', $year)
