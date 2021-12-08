@@ -39,6 +39,7 @@
                 <div class="p-2 border-t border-b">
                   @if (!$publications->isEmpty())
                     @foreach ($publications as $item)
+                    <div class="mb-4">
                         <div class="font-medium text-gray-800">
                             <div class="font-bold">{!! $item->title !!}</div>
                             <div class="text-sm">Author: {!! $item->author !!}</div>
@@ -53,6 +54,7 @@
                             </div>
                           </div>
                         @endif
+                    </div>
                     @endforeach
                   @else
                     <div class="text-center col-span-3">

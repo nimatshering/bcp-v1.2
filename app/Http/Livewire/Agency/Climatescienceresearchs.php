@@ -28,6 +28,7 @@ class Climatescienceresearchs extends Component
         'publication.title' => 'required', 
         'publication.author' => 'required', 
         'publication.agency' => 'required', 
+        'publication.abstract' => 'required', 
         'publication.description' => 'required', 
         'publication.subcategory_id' => 'required', 
         'publication.published_at' => 'required', 
@@ -47,7 +48,6 @@ class Climatescienceresearchs extends Component
     public function render()
     {
       $subcategories = Csrsubcategory::where('cat_id',$this->catID)->get();
-      // dd($subcategories);
       return view('backend.livewire.agency.climate-science-research.index', compact('subcategories'));
     }
 
@@ -86,6 +86,7 @@ class Climatescienceresearchs extends Component
             'slug' =>    Str::slug($this->publication['title'], '-'),             
             'author' =>   $this->publication['author'], 
             'agency' =>   $this->publication['agency'], 
+            'abstract' =>   $this->publication['abstract'], 
             'description' =>   $this->publication['description'], 
             'document' =>   $this->filename, 
             'subcategory_id' =>   $this->publication['subcategory_id'], 

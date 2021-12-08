@@ -15,10 +15,8 @@ class Guidancedocumentcategories extends Component
     public $confirmItemAdd = false;
    
     protected $rules = [
-        'category.icon' => 'required',
         'category.name' => 'required',
         'category.slug' => 'nullable',
-        'category.definition' => 'required'
     ];
 
 
@@ -59,10 +57,8 @@ class Guidancedocumentcategories extends Component
             session()->flash('message', 'Guidance document category updated successfully !');
         }else{
             Guidancedocumentcategory::create([
-            'icon' =>   $this->category['icon'], 
             'cat_id' =>   $this->cat_id, 
             'name' =>   $this->category['name'], 
-            'definition' =>   $this->category['definition'], 
             'slug' =>    Str::slug($this->category['name'], '-'), 
             ]);
             session()->flash('message', 'Guidance document category successfully created!');
@@ -103,7 +99,7 @@ class Guidancedocumentcategories extends Component
     {
         $category->delete();
         $this->confirmItemDeletion = false;
-        session()->flash('message', 'Document category category deleted successfully.');
+        session()->flash('message', 'Document category deleted successfully.');
         $this->reset(['category']);
         $this->category = null;
         return redirect()->route('admin.guidancedocument.category');

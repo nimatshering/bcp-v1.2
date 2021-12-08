@@ -118,8 +118,6 @@
                           </td>
 
                           
-
-                          
                           <td class="flex justify-end gap-2 p-2">
                               <button wire:click="showEditModal({{ $item->id }})" class="px-4 rounded text-gray-50 uppercase text-xs font-bold focus:border-gray-200 bg-gray-500 hover:text-gray-200">
                                   Edit

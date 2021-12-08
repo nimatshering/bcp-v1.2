@@ -32,9 +32,30 @@
                   </div>
               </div>
 
-            <!-- Content -->
+               <!-- abstract -->
            <div class="mt-4">
-            <x-jet-label for="description" value="{{ __('Document Description') }}" />
+            <x-jet-label for="abstract" value="{{ __('Abstract') }}" />
+							<div class="rounded-md shadow-sm">
+								<div class="mt-1 bg-white">                      
+									<div class="body-content" wire:ignore>                            
+										<trix-editor
+											class="trix-content"
+											x-ref="trix"
+											x-data
+											x-on:trix-change="$dispatch('input', event.target.value)"
+											wire:model.defer="publication.abstract"
+											wire:key="trix-abstract-unique-key"
+											>
+										</trix-editor>
+									</div>
+								</div>
+							</div>
+            <x-jet-input-error for="publication.abstract" class="mt-2" />
+            </div> 
+
+            <!-- Description -->
+           <div class="mt-4">
+            <x-jet-label for="description" value="{{ __('Description') }}" />
 							<div class="rounded-md shadow-sm">
 								<div class="mt-1 bg-white">                      
 									<div class="body-content" wire:ignore>                            

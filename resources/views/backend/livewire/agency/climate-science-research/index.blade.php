@@ -65,7 +65,7 @@
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap">
                           <div class="text-sm text-gray-900">
-                              {!! $item->title !!}
+                              {!! \Illuminate\Support\Str::limit($item->title, 100) !!}   
                           </div>
                       </td>
 

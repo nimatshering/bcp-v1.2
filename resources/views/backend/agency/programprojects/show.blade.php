@@ -37,9 +37,6 @@
                 <th scope="col" class="px-6 py-4 text-left tracking-wider">
                     Status
                 </th>
-                <th scope="col" class="px-6 py-4 text-left tracking-wider">
-                    Publication Date
-                </th>
                 <th scope="col" class="px-6 py-4 text-right tracking-wider">
                     Actions
                 </th>
@@ -61,7 +58,7 @@
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
                 <div class="text-sm text-gray-900">
-                  {!! \Illuminate\Support\Str::limit($item->title, 40) !!}            
+                  {!! \Illuminate\Support\Str::limit($item->title, 60) !!}            
                 </div>
               </td>
               <td class="px-6 py-4 whitespace-nowrap">
@@ -76,17 +73,11 @@
                 </div>
               </td>
 
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">
-                  {!! $item->created_at->format('d-M-Y') !!}
-                </div>
-              </td>
               <td class="flex justify-end gap-2 p-2">
                 <a href="{{ route('agency.programprojects.edit', $item->id)}}" class="px-4 py-2 rounded text-gray-50 uppercase text-xs font-bold focus:border-gray-200 bg-gray-500 hover:text-gray-200">
                     Edit
                 </a>                                     
 
-                
               </td>
             </tr>
             @endforeach

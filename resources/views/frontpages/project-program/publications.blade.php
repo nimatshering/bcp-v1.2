@@ -88,6 +88,33 @@
                               {!! $item->status !!}
                             </dd>
                           </div>
+                           <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                              Project Description:
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                              {!! $item->description !!}
+                            </dd>
+                          </div>
+
+                           <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                              Project Start Date:
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                              {!! $item->start_at !!}
+                            </dd>
+                          </div>
+
+                          <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
+                              Project End Date:
+                            </dt>
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                              {!! $item->end_at !!}
+                            </dd>
+                          </div>
+
                         </dl>
                         <div class='flex flex-wrap items-center has-tooltip gap-2'>
                            <p class="p-4 font-bold uppercase text-xs">Project Documents</p>

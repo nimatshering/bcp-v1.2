@@ -19,9 +19,12 @@
                     <div class="px-4 py-2 border-t border-b">
                       @if (!$publications->isEmpty())
                         @foreach ($publications as $item)
+                        <div class="mb-4">
                             <div class="text-sm font-medium text-gray-800">
                                 <div class="font-bold">{!! $item->title !!}</div>
                                 <div class="text-md">Author: {!! $item->author !!}</div>
+                                <div class="text-md">Year of Publication: {!! $item->published_at !!}</div>
+                                <div class="text-md">{!! $item->description !!}</div>
                             </div>
                             @if ($item->document)
                               <div class="mt-1">
@@ -33,6 +36,7 @@
                                 </div>
                               </div>
                             @endif
+                        </div>  
                         @endforeach
                       @else
                         <div class="text-center col-span-3">
@@ -43,7 +47,7 @@
                   </div>
                 </div>
               @if(!$publications->isEmpty())   
-                <div class="w-full">
+                <div class="flex w-full justify-start space-x-1">
                   {{ $publications->links() }}
                 </div>
               @endif

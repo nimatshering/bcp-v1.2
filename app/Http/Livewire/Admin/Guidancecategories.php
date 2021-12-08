@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use Livewire\Component;
 use App\Models\Guidancecategory;
+use Illuminate\Support\Str;
  
 
 class Guidancecategories extends Component
@@ -15,10 +16,8 @@ class Guidancecategories extends Component
     public $confirmItemAdd = false;
    
     protected $rules = [
-        'category.icon' => 'required',
         'category.name' => 'required',
         'category.slug' => 'nullable',
-        'category.definition' => 'nullable'
     ];
 
 
@@ -46,9 +45,7 @@ class Guidancecategories extends Component
             session()->flash('message', 'Guidance category updated successfully !');
         }else{
             Guidancecategory::create([
-            'icon' =>   $this->category['icon'], 
             'name' =>   $this->category['name'], 
-            'definition' =>   $this->category['definition'], 
             'slug' =>    Str::slug($this->category['name'], '-'), 
             ]);
             session()->flash('message', 'Guidance category successfully created!');

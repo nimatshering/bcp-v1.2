@@ -5,30 +5,12 @@
           </x-slot>
 
           <x-slot name="content">
-              <!-- iocn -->
-              <div class="mt-4">
-                  <div class="col-span-6 sm:col-span-4">
-                      <x-jet-label for="icon" value="{{ __('Icon') }}" />
-                      <x-jet-input id="icon" type="text" class="mt-1 block w-full" wire:model.defer="category.icon" />
-                      <x-jet-input-error for="category.icon" class="mt-2" />
-                  </div>
-              </div>
-              
               <!-- title -->
               <div class="mt-4">
                   <div class="col-span-6 sm:col-span-4">
                       <x-jet-label for="name" value="{{ __('Name') }}" />
                       <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="category.name" />
                       <x-jet-input-error for="category.name" class="mt-2" />
-                  </div>
-              </div>
-
-                <!-- Definition -->
-              <div class="mt-4">
-                  <div class="col-span-6 sm:col-span-4">
-                      <x-jet-label for="definition" value="{{ __('Definition') }}" />
-                      <x-jet-input id="definition" type="text" class="mt-1 block w-full" wire:model.defer="category.definition" />
-                      <x-jet-input-error for="category.definition" class="mt-2" />
                   </div>
               </div>
           </x-slot>

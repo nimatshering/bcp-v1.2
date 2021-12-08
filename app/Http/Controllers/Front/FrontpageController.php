@@ -117,7 +117,9 @@ class FrontpageController extends Controller
       $category = Guidancecategory::where('slug',$slug)->first();
       $subcategories = $category->subcategory;
       $subcategory = $subcategories->first();
-      $publications = $subcategory->documents()->paginate(10);
+      if(!empty($category)){
+        $publications = $subcategory->documents()->paginate(10);
+      }
       return view('frontpages.guidance-document.subcategory', compact('category','subcategories','subcategory','publications'));
     }
 
@@ -133,7 +135,11 @@ class FrontpageController extends Controller
       $subcategory = Guidancedocumentcategory::where('slug',$slug)->first();
       $category = Guidancecategory::where('id',$subcategory->cat_id)->first();
       $subcategories = $category->subcategory;
-      $publications = $subcategory->documents()->paginate(10);
+      $publicationlist = $subcategory->documents();
+      if(!is_null($publicationlist)){
+        $publications = $publicationlist->paginate(10);
+      }
+      
       return view('frontpages.guidance-document.publications', compact('category','subcategory','subcategories','publications'));
     }
 

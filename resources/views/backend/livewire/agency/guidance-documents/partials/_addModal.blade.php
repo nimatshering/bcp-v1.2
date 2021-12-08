@@ -47,24 +47,11 @@
                 <!-- document -->
               <div class="mt-4">
                 <div class="col-span-6 sm:col-span-4">
-                    <x-jet-label for="document" value="{{ __('Uplod Document') }}" />
+                    <x-jet-label for="document" value="{{ __('Uplaod Document') }}" />
                     <x-jet-input id="document" type="file" class="form-control mt-1 block w-full" wire:model.defer="document" />
                     <x-jet-input-error for="document" class="mt-2" />
                 </div>
               </div> 
-
-               {{-- <!-- Category -->
-               <div class="mt-4">
-                  <div class="col-span-6 sm:col-span-4">
-                      <x-jet-label for="category_id" value="{{ __('Select Category') }}" />
-                      <select name="category_id" wire:model.lazy="guidancedocument.category_id" class="form-control block appearance-none w-full bg-grey-lighter border border-grey-lighter text-grey-darker py-2 px-4 pr-8 rounded" required>
-                        <option value="" selected> Select </option>
-                        @foreach ($category as $key => $item)
-                                <option value="{{ $item->id }}">{{ $item->name }}</option>
-                        @endforeach
-                      </select>
-                  </div>
-              </div> --}}
 
                 <!-- Published Date -->
                <div class="mt-4">
