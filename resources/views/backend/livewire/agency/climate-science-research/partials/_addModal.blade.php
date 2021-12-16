@@ -101,7 +101,7 @@
             <div class="mt-4">
                 <div class="col-span-6 sm:col-span-4">
                 <x-jet-label for="published_at" value="{{ __('Publish Date') }}" />
-                <input type="text" x-data x-init="new Pikaday({ field: $el, format:'YYYY-MM-DD' })" class="form-control" id="published_at" wire:model.lazy="publication.published_at"/>
+                <input type="text" x-data x-init="new Pikaday({ field: $el, format:'YYYY' })" class="form-control" id="published_at" wire:model.lazy="publication.published_at"/>
                 <x-jet-input-error for="publication.published_at" class="mt-2" />
                 </div>
             </div>  

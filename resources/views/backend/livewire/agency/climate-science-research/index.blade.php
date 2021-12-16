@@ -36,13 +36,6 @@
                     <th scope="col" class="px-6 py-4 text-left tracking-wider">
                         Publication Name
                     </th>
-                    {{-- <th scope="col" class="flex px-6 py-4 text-left tracking-wider justify-center">
-                        Publication Type
-                    </th> --}}
-                     
-                    {{-- <th scope="col" class="px-6 py-4 tracking-wider text-center">
-                        Publish Date
-                    </th> --}}
                      <th scope="col" class="px-6 py-4 text-right tracking-wider">
                         Actions
                     </th>
@@ -68,18 +61,6 @@
                               {!! \Illuminate\Support\Str::limit($item->title, 100) !!}   
                           </div>
                       </td>
-
-                      {{-- <td class="px-6 py-4 whitespace-nowrap">
-                          <div class="text-sm text-gray-900">
-                              {!! $item->author !!}
-                          </div>
-                      </td> --}}
-
-                      {{-- <td class="px-6 py-4 whitespace-nowrap">
-                        <div class="text-sm text-gray-900 text-center">
-                            {!! $item->published_at !!}
-                        </div>
-                      </td> --}}
                       <td class="flex justify-end gap-2 p-2">
                           <button wire:click="showEditModal({{ $item->id }})" class="px-4 rounded text-gray-50 uppercase text-xs font-bold focus:border-gray-200 bg-gray-500 hover:text-gray-200">
                               Edit

@@ -39,24 +39,27 @@
                     <div class="px-4 py-2 border-t border-b">
                       @if (!$publications->isEmpty())
                         @foreach ($publications as $item)
-                        <div class="mb-4">
+                        <div class="mt-4npm ">
                             <div class="text-sm font-medium text-gray-800">
                                 <div class="font-bold">{!! $item->title !!}</div>
                                 <div class="text-md">Author: {!! $item->author !!}</div>
-                                <div class="text-md">Year of Publication: {!! $item->published_at !!}</div>
-                                <div class="text-md">{!! $item->description !!}</div>
                             </div>
                             @if ($item->document)
-                              <div class="mt-1 mb-4">
-                              <div class='has-tooltip'>
-                                <a href="{{ route('climatescience.download', $item->slug)}}" class="text-red-600 hover:text-red-500 text-2xl">
-                                    <i class="fa fa-file-pdf"></i>
-                                  </a>
-                                  <span class='tooltip rounded bg-green-500 text-white py-1 px-2 mt-8  text-xs text-bold'>Download</span>
+                              <div class="flex mt-1 gap-2">
+                                <div class='has-tooltip'>
+                                  <a href="{{ route('climatescience.download', $item->slug)}}" class="text-red-600 hover:text-red-500 text-2xl">
+                                      <i class="fa fa-file-pdf"></i>
+                                    </a>
+                                    <span class='tooltip rounded bg-green-500 text-white py-1 px-2 mt-8  text-xs text-bold'>Download</span>
+                                  </div>
+
+                                <div class='has-tooltip'>
+                                 <a class="bg-gray-50 hover:underline p-1 rounded text-xs">Abstract</a>
+                                  <span class='tooltip bg-gray-300 rounded p-4 m-4 text-sm'>{!! $item->abstract !!}</span>
                                 </div>
                               </div>
                             @endif
-                        </div>
+                             </div>
                         @endforeach
                       @else
                         <div class="text-center col-span-3">
@@ -67,7 +70,7 @@
                   </div>
                 </div>
               @if(!$publications->isEmpty())   
-                <div class="flex w-full justify-start space-x-1">
+                <div class="w-full">
                   {{ $publications->links() }}
                 </div>
               @endif

@@ -2,8 +2,8 @@
     class="fixed z-20 inset-0 opacity-50 transition-opacity lg:hidden ">
 </div>
   <!-- sidebar -->
-  <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
-    class="fixed z-30 inset-y-0 left-0 w-64 mx-60 md:w-80 transition duration-300  transform bg-green-800 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+  <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in text-xs md:text-sm'"
+    class="fixed z-30 inset-y-0 left-0 w-64 md:w-80 transition duration-300  transform bg-green-800 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
     <div class="flex flex-col sm:flex-row sm:justify-around">
       <div class="w-full mt-6">
         <!--Home -->
