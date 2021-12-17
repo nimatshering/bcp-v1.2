@@ -27,6 +27,7 @@ use App\Mail\ContactMail;
 use Illuminate\Support\Arr;
 use Mail;
 use Session;
+use App\Rules\GoogleRecaptcha;
 
 class FrontpageController extends Controller
 {
@@ -347,19 +348,19 @@ class FrontpageController extends Controller
          'email' => 'required|email',
          'subject' => 'required',
          'message' => 'required',
-        //  'g-recaptcha-response' => ['required', new GoogleRecaptcha]
+         'g-recaptcha-response' => ['required', new GoogleRecaptcha]
        ]); 
 
        
         //send email
-        $contactus = Arr::add($contactus, 'title', 'Email form BCP');
-        $contactus = Arr::add($contactus, 'url', 'http://bcp.nec.bt');
+        $contactus = Arr::add($contactus, 'title', 'Email form Bhutan Climate Platform');
+        $contactus = Arr::add($contactus, 'url', 'http://bcp.zhibsel.com');
         $email = 'bcpbhutan@gmail.com';
 
         Mail::to($email)->send(new ContactMail($contactus));
 
         Session::flash('success', 'Thank you for contacting us. We will get back to you as soon as possible ');
-        return view('frontpages.emailsuccess');
+        return view('frontpages.contact');
     }
 
 

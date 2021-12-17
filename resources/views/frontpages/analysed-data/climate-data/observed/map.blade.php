@@ -4,7 +4,7 @@
   <section class="pb-20 min-h-screen">
     <div class="container mx-auto">
       <div class="flex flex-wrap text-sm font-extrabold leading-8 tracking-tight justify-center py-10 uppercase gap-2">
-        <a href="{{ route('report.climate_observed') }}" class="shrink px-6 py-1 bg-green-600 hover:bg-green-500 rounded shadow text-gray-50 w-full md:w-3/12 mx-4 md:mx-0">
+        <a href="{{ route('report.climate_observed') }}" class="shrink px-6 py-1 bg-gray-100 hover:bg-green-500 hover:text-white rounded shadow text-gray-700 w-full md:w-3/12 mx-4 md:mx-0">
               Observed Climate Data
         </a>
         <a href="{{ route('report.climate_projected') }}" class="shrink px-6 py-1 bg-gray-100 hover:bg-green-500 hover:text-white rounded shadow text-gray-700 w-full md:w-3/12 mx-4 md:mx-0">

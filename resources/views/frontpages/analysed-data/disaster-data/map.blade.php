@@ -36,7 +36,13 @@
                     </select>
                   </div>
                   <div class="w-full md:w-4/12">
-                    <input type="text" name="year" class="form-control" placeholder="Select Year">
+                     <!-- Start Year -->
+                        <select name ="year" id="year" class="form-control">
+                          <option>Start Year</option>
+                          @for($year=date('Y'); $year > date('Y')-100; $year--)
+                              <option value="{{ $year }}">{{ $year }}</option>
+                          @endfor
+                        </select>
                   </div>
 
                   <div class="w-full md:w-3/12">

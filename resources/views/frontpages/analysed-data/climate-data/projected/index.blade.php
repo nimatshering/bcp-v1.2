@@ -50,16 +50,24 @@
                       <option value="{{ $item->id }}">{{ $item->name }}</option>
                   @endforeach
               </select>
-             <!-- Start Year -->
+              <!-- Start Year -->
               <div>
-                  <x-jet-input id="start_year" type="text" class="form-control" name="start_yr" placeholder="{{ __('Start Year') }}"  />
-                  <x-jet-input-error for="start_year" class="mt-1" />
+                <select name ="start_year" id="start_year" class="form-control">
+                  <option>Start Year</option>
+                  @for($year=date('Y'); $year > date('Y')-100; $year--)
+                      <option value="{{ $year }}">{{ $year }}</option>
+                  @endfor
+                </select>
               </div>
               
               <!-- End Year -->
               <div>
-                  <x-jet-input id="end_year" type="text" class="form-control" name="end_yr" placeholder="{{ __('End Year') }}"  />
-                  <x-jet-input-error for="end_year" class="mt-2" />
+                <select name ="end_year" id="end_year" class="form-control">
+                  <option>End Year</option>
+                    @for($year=date('Y'); $year > date('Y')-100; $year--)
+                      <option value="{{ $year }}">{{ $year }}</option>
+                    @endfor
+                </select>
               </div>
             </div>
             

@@ -22,21 +22,25 @@
               </select>
             </div>
 
-            <!-- Start Year -->
-            <div class="mt-4">
-                <div class="col-span-6 sm:col-span-4">
-                    <x-jet-input type="text" class="form-control" wire:model.defer="disaster.start_yr" placeholder="From Year"/>
-                    <x-jet-input-error for="start_year" class="mt-2" />
-                </div>
-            </div>
-            
-            <!-- End Year -->
-            <div class="mt-4">
-                <div class="col-span-6 sm:col-span-4">
-                    <x-jet-input type="text" class="form-control" wire:model.defer="disaster.end_yr" placeholder="To Year" />
-                    <x-jet-input-error for="end_year" class="mt-2" />
-                </div>
-            </div>
+             <!-- Start Year -->
+              <div class="mt-4">
+                <select name ="start_year" id="start_year" class="form-control">
+                  <option>Start Year</option>
+                  @for($year=date('Y'); $year > date('Y')-100; $year--)
+                      <option value="{{ $year }}">{{ $year }}</option>
+                  @endfor
+                </select>
+              </div>
+              
+              <!-- End Year -->
+              <div class="mt-4">
+                <select name ="end_year" id="end_year" class="form-control">
+                  <option>End Year</option>
+                    @for($year=date('Y'); $year > date('Y')-100; $year--)
+                      <option value="{{ $year }}">{{ $year }}</option>
+                    @endfor
+                </select>
+              </div>
           </div>
 
            <div class="my-2 text-center">

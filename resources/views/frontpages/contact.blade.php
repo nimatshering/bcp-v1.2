@@ -1,3 +1,6 @@
+@push('scripts')
+        <script src='https://www.google.com/recaptcha/api.js' async defer></script>
+@endpush
 <x-guest-layout>
   <!-- Header Section-->
      <x-front.top-header />
@@ -8,7 +11,6 @@
             <h2 class="p-3 w-full text-blue font-bold uppercase text-center"> Contact us</h2>
       </div>
     </div>
-
 
        @if (Session::has('success'))
         <div class="flex w-full max-w-xl mx-auto overflow-hidden bg-gray-50 rounded-lg shadow">
@@ -30,8 +32,7 @@
 
     <!-- Content -->
     <section class="container mx-auto">
-          <p class="mt-2 text-center text-gray-600">For any support, please email us using the form below.
-            </p>
+          <p class="m-2 text-center text-gray-600">For any support, please email us using the form below.</p>
       <div class="flex flex-wrap">
         <div class="w-full md:w-3/12 my-4 md:pr-4 mx-4 md:mx-0">
             <div class="grid grid-cols-1 gap-4">
@@ -78,15 +79,15 @@
                           <div>{{ $errors->first('message') }}</div>
                       </div>
 
-                      {{-- <div class="mt-2">
-                              <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                      <div class="mt-2">
+                          <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                          @if ($errors->has('g-recaptcha-response'))
+                              <span class="invalid-feedback" style="display: block;">
+                                  <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
+                              </span>
+                          @endif
+                      </div>
 
-                              @if ($errors->has('g-recaptcha-response'))
-                                  <span class="invalid-feedback" style="display: block;">
-                                      <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                  </span>
-                              @endif
-                      </div> --}}
                       <div class="flex justify-center ">
                       <button type="submit" class="bg-green-500 px-4 py-2 mt-2 rounded text-white hover:bg-green-600"> Send Message</button>
                       </div>
