@@ -12,5 +12,5 @@
     </body>
       @stack('modals')
       @livewireScripts
-      @stack('scripts')
+       @stack('scripts')
 </html>

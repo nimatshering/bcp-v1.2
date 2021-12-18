@@ -1,11 +1,4 @@
 <x-guest-layout>
-  @push('styles')
-    <style>
-    .accordion-content {
-    transition: max-height 0.3s ease-out, padding 0.3s ease;
-    }
-</style>
-@endpush
   <!-- Header Section-->
   <x-front.top-header />
 
@@ -47,82 +40,77 @@
                   </button>
                 </div>
               </div>
-            </div>
-            <input type="hidden" name="category" value="{{ $programprojectcategory->id }}">
-          </form>
+          </div>
+          <input type="hidden" name="category" value="{{ $programprojectcategory->id }}">
+        </form>
 
         <div class="flex flex-wrap flex-row gap-4 mx-auto mt-10">
           <!-- Publication Documents -->
-          <div class="w-full p-4">
-            <h3 class="leading-6 font-bold md:text-lg pb-4 text-center uppercase">{{ $programprojectcategory->name}}</h3>
-            
-            @if (!$publications->isEmpty())
-              @foreach ($publications as $item)
-                <div class="transition shadow my-2">
-                  <!-- header -->
-                  <div class="bg-green-500 text-white rounded accordion-header cursor-pointer transition flex space-x-5 px-5 items-center h-16">
-                      <i class="fas fa-chevron-circle-down"></i>
-                      <h3 class="font-bold">{!! $item->title !!}</h3>
-                  </div>
-                  <!-- Content -->
-                  <div class="bg-white accordion-content px-5 pt-0 overflow-hidden max-h-0">
-                     <div class="border-t border-gray-200">
+          <div class="w-full">
+              <h3 class="leading-6 font-bold md:text-lg pb-4 text-center uppercase">{{ $programprojectcategory->name}}</h3>
+                  @if (!$publications->isEmpty())
+                    @foreach ($publications as $item)
+                    <div class="shadow overflow-hidden sm:rounded-lg mb-4">
+                      <div class="px-4 py-2 sm:px-6 bg-green-500">
+                        <h3 class="leading-6 font-bold text-white">{!! $item->title !!}</h3>
+                      </div>
+                      <div class="border-t border-gray-200">
                         <dl>
-                          <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium">
+                          <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
                               Funding Agency
                             </dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                              {!! $item->funding !!}
                             </dd>
                           </div>
-                          <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium">
+                          <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
                              Fund Amount:
                             </dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                               {!! $item->amount !!}
                             </dd>
                           </div>
-                          <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium">
+                          <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
                               Implementing Agency:
                             </dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                               {!! $item->agency !!}
                             </dd>
                           </div>
                           <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium">
+                            <dt class="text-sm font-medium text-gray-500">
                               Project Status:
                             </dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                               {!! $item->status !!}
                             </dd>
                           </div>
-                           <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium">
+                           <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
                               Project Description:
                             </dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                               {!! $item->description !!}
                             </dd>
                           </div>
 
                            <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium">
+                            <dt class="text-sm font-medium text-gray-500">
                               Project Start Date:
                             </dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                               {!! $item->start_at !!}
                             </dd>
                           </div>
 
-                          <div class="bg-white px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                            <dt class="text-sm font-medium">
+                          <div class="bg-gray-50 px-4 py-2 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                            <dt class="text-sm font-medium text-gray-500">
                               Project End Date:
                             </dt>
-                            <dd class="mt-1 text-sm sm:mt-0 sm:col-span-2">
+                            <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                               {!! $item->end_at !!}
                             </dd>
                           </div>
@@ -139,16 +127,15 @@
                           @endforeach
                         </div>
                       </div>
-                  </div>
-                </div>
-              @endforeach
-            @else
-              <div class="text-center col-span-3">
-                <p class="font-bold">Sorry! No results found.</p>
-                <p> Try another way</p>
-              </div>
-            @endif
-          </div>
+                    </div>
+                    @endforeach
+                  @else
+                    <div class="text-center col-span-3">
+                      <p class="font-bold">Sorry! No results found.</p>
+                      <p> Try another way</p>
+                    </div>
+                  @endif
+            </div>
           <div class="w-full">
             {{ $publications->links() }}
           </div>
@@ -157,30 +144,4 @@
     </div>
   </div>
 </section>
-
-
-@push('scripts')
- <script>
-    const accordionHeader = document.querySelectorAll(".accordion-header");
-    accordionHeader.forEach((header) => {
-    header.addEventListener("click", function () {
-        const accordionContent = header.parentElement.querySelector(".accordion-content");
-        let accordionMaxHeight = accordionContent.style.maxHeight;
-
-        // Condition handling
-        if (accordionMaxHeight == "0px" || accordionMaxHeight.length == 0) {
-        accordionContent.style.maxHeight = `${accordionContent.scrollHeight + 32}px`;
-        header.querySelector(".fas").classList.remove("fa-chevron-circle-down");
-        header.querySelector(".fas").classList.add("fa-chevron-circle-up");
-        header.parentElement.classList.add("bg-indigo-50");
-        } else {
-        accordionContent.style.maxHeight = `0px`;
-        header.querySelector(".fas").classList.add("fa-chevron-circle-down");
-        header.querySelector(".fas").classList.remove("fa-chevron-circle-up");
-        header.parentElement.classList.remove("bg-indigo-50");
-        }
-    });
-    });
-</script>
-@endpush
 </x-guest-layout>
