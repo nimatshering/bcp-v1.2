@@ -1,5 +1,4 @@
 <script src="https://code.highcharts.com/maps/highmaps.js"></script>
-{{-- <script src="https://code.highcharts.com/mapdata/countries/bt/bt-all.js"></script> --}}
  <script src="{{ asset('js/bt-all.js') }}"></script> 
 
 <script type="text/javascript">
