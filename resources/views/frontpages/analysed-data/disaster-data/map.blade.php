@@ -9,7 +9,7 @@
 
   <section class="pb-20 min-h-screen">
     <div class="container mx-auto">
-        <div class="flex flex-wrap text-sm font-extrabold leading-8 tracking-tight justify-center py-2 uppercase gap-2 mx-2 md:mx-0">
+        <div class="flex flex-wrap text-sm font-extrabold leading-8 tracking-tight justify-center py-2 uppercase gap-2 mx-2 md:mx-0 justify-center">
           <a href="{{ route('report.disaster.map') }}" class="text-center shrink px-6 py-1 bg-green-600 hover:bg-green-500 rounded shadow text-gray-50 w-full md:w-3/12 mx-2 md:mx-0">
               Map 
           </a>

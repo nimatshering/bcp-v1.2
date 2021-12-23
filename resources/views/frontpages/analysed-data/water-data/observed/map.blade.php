@@ -17,12 +17,9 @@
                 @include('frontpages.analysed-data.partials._sidebar')
           </div>
           <div class="w-full md:w-8/12">
-            <div class="container mx-auto w-full md:w-11/12"> 
               <figure class="highcharts-figure">
                   <div id="bhutanmap"></div>
               </figure>
-            </div>
-
           </div>
         </div>
      </div>    

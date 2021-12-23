@@ -28,7 +28,9 @@ Highcharts.mapChart('bhutanmap', {
     colorAxis: {
         min:0
     },
-    
+    credits: {
+            enabled: false
+        },
     series: [{
         data: data,
         name: 'Annual Flow',
