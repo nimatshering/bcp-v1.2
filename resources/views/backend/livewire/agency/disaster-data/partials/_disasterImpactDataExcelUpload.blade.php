@@ -7,6 +7,8 @@
     <div class="flex gap-2">
     
         <input type="file" name="datafile" class="form-control">
+        <input type="hidden" name="disasterId" class="form-control" value="{{$disaster_id}}">
+        <input type="hidden" name="dzongkhagId" class="form-control" value="{{$dzongkhag_id}}">
         <button type="submit" class="bg-gray-200 px-4 my-1 rounded text-gray-900 text-xs uppercase shadow">
           Import
         </button>

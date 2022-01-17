@@ -32,9 +32,9 @@ class DisasterImpactDataImport implements ToModel, WithHeadingRow
     public function model(array $row)
     {
         return new DisasterImpact([
-            'disaster_id' => 1,//$this->disasterId,//row['disaster_id'],
+            'disaster_id' => $this->disasterId,
             'parameter_id' => $row['parameter_id'],
-            'dzongkhag_id' => 1,//$this->dzongkhagId,
+            'dzongkhag_id' => $this->dzongkhagId,
             'value' => $row['value'],
             'description' => $row['description'],
             'user_id' =>  Auth::user()->id,

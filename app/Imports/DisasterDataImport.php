@@ -26,7 +26,7 @@ class DisasterDataImport implements ToModel, WithHeadingRow, SkipsOnError
     {
         $this->dzongkhagId = $did;
         $this->parameterId = $pid;
-        //dd($this->stationId);
+        //dd($this->);
     }
 
     public function model(array $row)
