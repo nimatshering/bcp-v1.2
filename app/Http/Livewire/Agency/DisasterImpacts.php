@@ -130,7 +130,9 @@ class DisasterImpacts extends Component
      public function disasterImpactExcelImport(Request $request)
     {
       $file = $request->file('datafile');
-      Excel::import(new DisasterImpactDataImport($this->disaster_id, $this->dzongkhag_id),$file);
+      $dz_id=$request->input('dzongkhagId');
+      $d_id =$request->input('disasterId');
+      Excel::import(new DisasterImpactDataImport($d_id, $dz_id),$file);
       session()->flash('message', 'Excel data successfully imported!');
       return back();
     }
